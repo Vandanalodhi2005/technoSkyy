@@ -2,23 +2,21 @@ import React from 'react'
 import PageHero from '../components/PageHero'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CareerSection from '../components/CareerSection';
+import WebDesignDevelopmentSection from '../components/WebDesignDevelopmentSection';
 
-function Careers() {
+function WebDD() {
   return (
-    <div>
-    <section>
+   <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Career"
+  title="Web designing and development"
   subtitle="Our mission is to make your business better through technology"
 />
-<CareerSection />
+    <WebDesignDevelopmentSection />
       
       <Footer />
     </section>
-    </div>
   )
 }
 
-export default Careers
+export default WebDD

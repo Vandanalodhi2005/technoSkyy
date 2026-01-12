@@ -2,18 +2,18 @@ import React from 'react'
 import PageHero from '../components/PageHero'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CareerSection from '../components/CareerSection';
+import DigitalMarketingSection from '../components/DigitalMarketingSection';
 
-function Careers() {
+function DigitalMarketing() {
   return (
     <div>
-    <section>
+   <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Career"
+  title="Digit Marketing section"
   subtitle="Our mission is to make your business better through technology"
 />
-<CareerSection />
+<DigitalMarketingSection />
       
       <Footer />
     </section>
@@ -21,4 +21,4 @@ function Careers() {
   )
 }
 
-export default Careers
+export default DigitalMarketing

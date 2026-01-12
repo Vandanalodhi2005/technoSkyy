@@ -1,25 +1,24 @@
 import React from 'react'
-import Header from '../components/Header'
 import PageHero from '../components/PageHero'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
-import ServicesSection from '../components/ServicesSection'
+import SoftwareDevelopmentSection from '../components/SoftwareDevelopmentSection'
 
-function Services() {
+function SoftwareDevelopment() {
   return (
-    <div>
+  <div>
     <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Services"
+  title="software development"
   subtitle="Our mission is to make your business better through technology"
 />
-    <ServicesSection />
-
+   <SoftwareDevelopmentSection />
       
       <Footer />
     </section>
-    </div>
+  </div>
   )
 }
 
-export default Services
+export default SoftwareDevelopment

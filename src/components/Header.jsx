@@ -69,7 +69,7 @@ const Header = ({ bgTransparent = true }) => {
 
           {/* CTA BUTTON */}
           <Link
-            to="/contact"
+            to="/helpcenter"
             className="hidden md:inline-block bg-[#2d6cff] hover:bg-[#1f5eff] text-white px-6 py-2.5 rounded-md text-sm font-semibold transition"
           >
             Help Center

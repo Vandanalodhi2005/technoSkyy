@@ -10,6 +10,7 @@ import PageHero from '../components/PageHero'
 
 function About() {
   return (
+    <div>
     <section>
       <Header bgTransparent={true} />
       <PageHero
@@ -24,6 +25,7 @@ function About() {
       <CTASection />
       <Footer />
     </section>
+    </div>
   )
 }
 

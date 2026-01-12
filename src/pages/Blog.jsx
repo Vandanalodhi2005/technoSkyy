@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 
 function Blog() {
   return (
+    <div>
     <section>
       <Header bgTransparent={true} />
       <PageHero
@@ -16,6 +17,7 @@ function Blog() {
       
       <Footer />
     </section>
+    </div>
   )
 }
 

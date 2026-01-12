@@ -1,25 +1,24 @@
 import React from 'react'
-import Header from '../components/Header'
 import PageHero from '../components/PageHero'
-import Footer from '../components/Footer'
-import ServicesSection from '../components/ServicesSection'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ITSupportSection from '../components/ITSupportSection';
 
-function Services() {
+function ITSupport() {
   return (
     <div>
-    <section>
+      <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Services"
+  title="it support "
   subtitle="Our mission is to make your business better through technology"
 />
-    <ServicesSection />
 
-      
+    <ITSupportSection />
       <Footer />
     </section>
     </div>
   )
 }
 
-export default Services
+export default ITSupport

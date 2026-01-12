@@ -2,19 +2,20 @@ import React from 'react'
 import Header from '../components/Header'
 import PageHero from '../components/PageHero'
 import Footer from '../components/Footer'
-import ServicesSection from '../components/ServicesSection'
+import HelpCenter from '../components/HelpCenter'
+import FAQSection from '../components/FAQSection'
 
-function Services() {
+function HelpDeskCenter() {
   return (
     <div>
-    <section>
+      <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Services"
+  title="Contact"
   subtitle="Our mission is to make your business better through technology"
 />
-    <ServicesSection />
-
+<HelpCenter />
+<FAQSection />
       
       <Footer />
     </section>
@@ -22,4 +23,4 @@ function Services() {
   )
 }
 
-export default Services
+export default HelpDeskCenter

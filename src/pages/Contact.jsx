@@ -7,6 +7,7 @@ import ContactFormSection from '../components/ContactFormSection';
 
 function Contact() {
   return (
+    <div>
     <section>
       <Header bgTransparent={true} />
       <PageHero
@@ -16,8 +17,10 @@ function Contact() {
 <ContactSection />
 <ContactFormSection />
       
+      
       <Footer />
     </section>
+    </div>
   )
 }
 

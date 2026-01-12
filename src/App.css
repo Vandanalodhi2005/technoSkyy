@@ -87,3 +87,22 @@
   animation: fadeUp 0.8s ease forwards;
   opacity: 0;
 } */
+/* Global Font Awesome Icon Style */
+i[class^="fa-"],
+i[class*=" fa-"] {
+  font-size: 22px;
+  color: #2d6cff;
+  transition: 0.3s ease;
+}
+
+/* Duotone Primary + Secondary colors */
+.fa-duotone {
+  --fa-primary-color: #2d6cff;
+  --fa-secondary-color: #7aa2ff;
+  --fa-secondary-opacity: 0.5;
+}
+
+/* Hover effect */
+i:hover {
+  transform: scale(1.1);
+}
