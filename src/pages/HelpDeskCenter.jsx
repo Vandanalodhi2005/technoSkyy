@@ -11,7 +11,7 @@ function HelpDeskCenter() {
       <section>
       <Header bgTransparent={true} />
       <PageHero
-  title="Contact"
+  title="help center"
   subtitle="Our mission is to make your business better through technology"
 />
 <HelpCenter />

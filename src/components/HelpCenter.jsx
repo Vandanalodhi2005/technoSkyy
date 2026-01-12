@@ -3,34 +3,41 @@ import React from "react";
 const HelpCenter = () => {
   return (
     <>
-      {/* ===== HERO SECTION ===== */}
-      <section className="hero">
-        <h1 className="hero-title">How can we help?</h1>
+      {/* ===== HERO ===== */}
+      <section className="help-hero">
+        <h1>How can we help you?</h1>
+        <p>Search our knowledge base or contact our support team</p>
 
-        <div className="search-box">
-          <span className="search-icon">🔍</span>
-          <input placeholder="Search..." />
+        <div className="search-wrapper">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search articles, topics or keywords..." />
         </div>
       </section>
 
-      {/* ===== SUPPORT CARDS ===== */}
-      <section className="cards-section">
-        <div className="card slide-left">
-          <div className="card-icon">💬</div>
+      {/* ===== SUPPORT OPTIONS ===== */}
+      <section className="help-cards">
+        <div className="help-card slide-left">
+          <div className="icon-box">
+            <i className="fa-solid fa-comments"></i>
+          </div>
           <h3>Free Consultation</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Get expert advice to choose the right digital solution for your business.</p>
         </div>
 
-        <div className="card slide-up">
-          <div className="card-icon">✉️</div>
+        <div className="help-card slide-up">
+          <div className="icon-box">
+            <i className="fa-solid fa-headset"></i>
+          </div>
           <h3>Ticket Support</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Submit a support ticket and our technical team will assist you quickly.</p>
         </div>
 
-        <div className="card slide-right">
-          <div className="card-icon">📄</div>
-          <h3>Documentations</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className="help-card slide-right">
+          <div className="icon-box">
+            <i className="fa-solid fa-book-open"></i>
+          </div>
+          <h3>Documentation</h3>
+          <p>Browse detailed guides, FAQs and tutorials for all our services.</p>
         </div>
       </section>
 
@@ -40,7 +47,7 @@ const HelpCenter = () => {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          font-family: "Segoe UI", sans-serif;
+          font-family: "Inter", "Segoe UI", sans-serif;
         }
 
         body {
@@ -49,92 +56,123 @@ const HelpCenter = () => {
         }
 
         /* HERO */
-        .hero {
-          min-height: 60vh;
-          background: linear-gradient(135deg, #071a2c, #0b2c4a);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        .help-hero {
+          padding: 90px 20px 140px;
+          background: radial-gradient(circle at top, #0c2c4a, #050b14 70%);
           text-align: center;
-          animation: fadeIn 1.5s ease;
+          animation: fadeIn 1.2s ease;
         }
 
-        .hero-title {
+        .help-hero h1 {
           font-size: 48px;
-          margin-bottom: 30px;
+          font-weight: 700;
+          margin-bottom: 12px;
         }
 
-        .search-box {
+        .help-hero p {
+          color: #b7c7e0;
+          margin-bottom: 35px;
+          font-size: 17px;
+        }
+
+        .search-wrapper {
+          max-width: 620px;
+          margin: auto;
+          background: rgba(18, 38, 58, 0.85);
+          backdrop-filter: blur(12px);
+          border-radius: 14px;
+          padding: 18px 22px;
           display: flex;
           align-items: center;
-          gap: 10px;
-          background: #12263a;
-          padding: 18px 20px;
-          width: 520px;
-          border-radius: 10px;
+          gap: 14px;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
-        .search-box input {
+        .search-wrapper i {
+          font-size: 22px;
+          color: #4f8cff;
+        }
+
+        .search-wrapper input {
+          width: 100%;
           background: transparent;
           border: none;
           outline: none;
           color: #fff;
-          width: 100%;
           font-size: 16px;
         }
 
         /* CARDS */
-        .cards-section {
+        .help-cards {
+          max-width: 1150px;
+          margin: -90px auto 120px;
+          padding: 0 20px;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 30px;
-          max-width: 1100px;
-          margin: -80px auto 100px;
-          padding: 0 20px;
         }
 
-        .card {
-          background: #0e1f33;
-          padding: 40px;
-          border-radius: 20px;
+        .help-card {
+          background: linear-gradient(180deg, #0f2238, #0b1a2b);
+          border-radius: 22px;
+          padding: 45px 35px;
           text-align: center;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.45);
           opacity: 0;
-          animation: fadeUp 1s ease forwards;
+          transition: all 0.4s ease;
         }
 
-        .card:hover {
-          transform: translateY(-10px);
-          transition: 0.4s;
+        .help-card:hover {
+          transform: translateY(-14px);
+          box-shadow: 0 35px 70px rgba(79,140,255,0.25);
         }
 
-        .card-icon {
+        .icon-box {
+          width: 85px;
+          height: 85px;
+          margin: auto auto 20px;
+          border-radius: 18px;
+          background: linear-gradient(135deg, #2d6cff, #6aa2ff);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .icon-box i {
           font-size: 36px;
-          margin-bottom: 15px;
+          color: #fff;
         }
 
-        .card h3 {
+        .help-card h3 {
           font-size: 22px;
-          margin-bottom: 10px;
+          margin-bottom: 12px;
+          font-weight: 600;
         }
 
-        .card p {
-          color: #b7c7e0;
+        .help-card p {
           font-size: 15px;
-          line-height: 1.6;
+          color: #b7c7e0;
+          line-height: 1.7;
         }
 
         /* ANIMATIONS */
-        .slide-left { animation-delay: 0.2s; transform: translateX(-80px); }
-        .slide-up { animation-delay: 0.4s; transform: translateY(80px); }
-        .slide-right { animation-delay: 0.6s; transform: translateX(80px); }
+        .slide-left { animation: slideLeft 1s ease forwards; animation-delay: 0.2s; }
+        .slide-up { animation: slideUp 1s ease forwards; animation-delay: 0.4s; }
+        .slide-right { animation: slideRight 1s ease forwards; animation-delay: 0.6s; }
 
-        @keyframes fadeUp {
-          to {
-            opacity: 1;
-            transform: translate(0);
-          }
+        @keyframes slideLeft {
+          from { opacity: 0; transform: translateX(-80px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(80px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideRight {
+          from { opacity: 0; transform: translateX(80px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeIn {
@@ -144,13 +182,13 @@ const HelpCenter = () => {
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-          .cards-section {
+          .help-cards {
             grid-template-columns: 1fr;
-            margin-top: 40px;
+            margin-top: 60px;
           }
 
-          .search-box {
-            width: 90%;
+          .help-hero h1 {
+            font-size: 36px;
           }
         }
       `}</style>
