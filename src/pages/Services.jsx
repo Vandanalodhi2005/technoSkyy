@@ -9,10 +9,10 @@ function Services() {
     <div>
     <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="Services"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
     <ServicesSection />
 
       

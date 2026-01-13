@@ -9,10 +9,10 @@ function Careers() {
     <div>
     <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="Career"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
 <CareerSection />
       
       <Footer />

@@ -9,10 +9,10 @@ function Solutions() {
     <div>
    <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="Solutions"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
 <SolutionSection />
       
       <Footer />

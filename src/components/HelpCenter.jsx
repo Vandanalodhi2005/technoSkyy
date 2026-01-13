@@ -75,6 +75,11 @@ const HelpCenter = () => {
           font-size: 17px;
         }
 
+        .help-hero {
+          margin-top: 80px; /* same height as header */
+         }
+
+
         .search-wrapper {
           max-width: 620px;
           margin: auto;
@@ -105,7 +110,7 @@ const HelpCenter = () => {
         /* CARDS */
         .help-cards {
           max-width: 1150px;
-          margin: -90px auto 120px;
+          margin: 60px auto 120px;
           padding: 0 20px;
           display: grid;
           grid-template-columns: repeat(3, 1fr);

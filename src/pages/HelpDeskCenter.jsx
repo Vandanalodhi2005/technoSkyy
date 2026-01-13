@@ -10,10 +10,10 @@ function HelpDeskCenter() {
     <div>
       <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="help center"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
 <HelpCenter />
 <FAQSection />
       

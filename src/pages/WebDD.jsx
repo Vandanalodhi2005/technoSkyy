@@ -8,10 +8,10 @@ function WebDD() {
   return (
    <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="Web designing and development"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
     <WebDesignDevelopmentSection />
       
       <Footer />

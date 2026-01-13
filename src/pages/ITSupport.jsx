@@ -9,10 +9,10 @@ function ITSupport() {
     <div>
       <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="it support "
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
 
     <ITSupportSection />
       <Footer />

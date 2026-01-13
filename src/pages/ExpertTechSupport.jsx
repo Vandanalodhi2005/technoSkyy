@@ -9,10 +9,10 @@ function ExpertTechSupport() {
     <div>
       <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="Digit Marketing section"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
 <ExpertTechSupportSection />
       
       <Footer />

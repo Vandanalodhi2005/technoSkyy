@@ -9,10 +9,10 @@ function SoftwareDevelopment() {
   <div>
     <section>
       <Header bgTransparent={true} />
-      <PageHero
+      {/* <PageHero
   title="software development"
   subtitle="Our mission is to make your business better through technology"
-/>
+/> */}
    <SoftwareDevelopmentSection />
       
       <Footer />
