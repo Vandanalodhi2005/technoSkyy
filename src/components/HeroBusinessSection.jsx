@@ -17,7 +17,8 @@ const HeroBusinessSection = () => {
       "
       style={{
         backgroundImage:
-          "url('https://new.creativemox.com/techbiz/wp-content/uploads/sites/12/2025/07/part-of-earth-with-sun-rise-and-lens-flare-background-internet-network-concept.jpg')",
+          // "url('https://new.creativemox.com/techbiz/wp-content/uploads/sites/12/2025/07/part-of-earth-with-sun-rise-and-lens-flare-background-internet-network-concept.jpg')",
+          "href = './'"
       }}
     >
       {/* Dark overlay (IMPORTANT for readability) */}

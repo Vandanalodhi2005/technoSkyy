@@ -1,5 +1,7 @@
 import React from "react";
 import { FiPlay } from "react-icons/fi";
+import { Link } from "react-router-dom";
+
 
 const WhatWeDoSection = () => {
     return (
@@ -28,18 +30,19 @@ const WhatWeDoSection = () => {
                             Mobile Application Development
                         </h4>
 
-                        <p className="text-[#9aa4bf] text-sm leading-relaxed mb-6">
+                        <p className="text-[#9aa4bf] text-sm leading-relaxed mb-6 text-alig">
                             Incubate effective ideas across market driven technology.
                         </p>
 
                         {/* Image at bottom */}
                         <div className="mt-auto h-[240px] flex items-end justify-center overflow-hidden">
-                            <img
-                                src="https://new.creativemox.com/techbiz/wp-content/uploads/sites/12/2025/07/mobile_app.png"
-                                alt="Mobile Application"
-                                className="h-full object-contain"
-                            />
-                        </div>
+  <img
+    src="../public/photo/Digital Marketing & Branding.jpg"
+    alt="Mobile Application"
+    className="h-full object-contain"
+  />
+</div>
+
                     </div>
 
                     {/* ================= CARD 2 ================= */}

@@ -5,31 +5,37 @@ const solutions = [
     title: "SMB Solutions",
     desc: "Scalable IT and digital solutions tailored for small and medium businesses.",
     icon: "🏢",
+    direction: "left",
   },
   {
     title: "E-Commerce Solutions",
     desc: "High-performance online stores with secure payments and growth tools.",
     icon: "🛒",
+    direction: "right",
   },
   {
     title: "Healthcare Solutions",
     desc: "Secure, compliant, and efficient digital systems for healthcare providers.",
     icon: "🩺",
+    direction: "left",
   },
   {
     title: "Education Solutions",
     desc: "E-learning platforms, portals, and digital classrooms for institutions.",
     icon: "🎓",
+    direction: "right",
   },
   {
     title: "FinTech Solutions",
     desc: "Robust fintech platforms with security, speed, and scalability.",
     icon: "💳",
+    direction: "left",
   },
   {
     title: "Startup Solutions",
     desc: "End-to-end tech solutions to help startups launch and scale faster.",
     icon: "🚀",
+    direction: "right",
   },
 ];
 
@@ -54,8 +60,8 @@ const SolutionSection = () => {
           {solutions.map((item, index) => (
             <div
               key={index}
-              className="solution-card"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className={`solution-card slide-${item.direction}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="solution-icon">{item.icon}</div>
               <h3>{item.title}</h3>
@@ -75,7 +81,7 @@ const SolutionSection = () => {
         <button>Talk to Our Experts</button>
       </section>
 
-      {/* ===== CSS (SAME FILE) ===== */}
+      {/* ===== CSS ===== */}
       <style>{`
         * {
           box-sizing: border-box;
@@ -125,7 +131,7 @@ const SolutionSection = () => {
           line-height: 1.7;
         }
 
-        /* SOLUTIONS GRID */
+        /* GRID */
         .solutions-section {
           padding: 100px 20px;
         }
@@ -139,24 +145,28 @@ const SolutionSection = () => {
         }
 
         .solution-card {
-          background: rgba(18, 38, 58, 0.75);
+          background: rgba(18, 38, 58, 0.8);
           backdrop-filter: blur(12px);
-          border-radius: 20px;
+          border-radius: 22px;
           padding: 40px 32px;
           text-align: center;
           opacity: 0;
-          animation: fadeUp 0.9s ease forwards;
-          transition: 0.4s;
+          transition: transform 0.5s ease, box-shadow 0.5s ease;
+          animation: fadeUp 1.1s ease forwards;
         }
 
         .solution-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+          transform: translateY(-8px);
+          box-shadow: 0 30px 60px rgba(45, 156, 255, 0.25);
         }
 
+        /* ICON STYLE */
         .solution-icon {
-          font-size: 42px;
-          margin-bottom: 16px;
+          font-size: 44px;
+          margin-bottom: 18px;
+          background: linear-gradient(135deg, #2d9cff, #6fb7ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .solution-card h3 {
@@ -187,7 +197,6 @@ const SolutionSection = () => {
           color: #b6c6df;
           max-width: 600px;
           margin: 0 auto 30px;
-          line-height: 1.7;
         }
 
         .solution-cta button {
@@ -202,22 +211,30 @@ const SolutionSection = () => {
         }
 
         .solution-cta button:hover {
-          transform: scale(1.06);
+          transform: scale(1.05);
         }
 
         /* ANIMATIONS */
         .slide-down {
-          animation: slideDown 1s ease forwards;
+          animation: slideDown 1.2s ease forwards;
         }
 
         .fade-in {
-          animation: fadeIn 1.2s ease forwards;
+          animation: fadeIn 1.3s ease forwards;
+        }
+
+        .slide-left {
+          animation: slideLeft 1.2s ease forwards;
+        }
+
+        .slide-right {
+          animation: slideRight 1.2s ease forwards;
         }
 
         @keyframes slideDown {
           from {
             opacity: 0;
-            transform: translateY(-60px);
+            transform: translateY(-50px);
           }
           to {
             opacity: 1;
@@ -225,10 +242,32 @@ const SolutionSection = () => {
           }
         }
 
+        @keyframes slideLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideRight {
+          from {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
         @keyframes fadeUp {
           from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;

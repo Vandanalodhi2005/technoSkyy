@@ -10,10 +10,10 @@ import Careers from './pages/Careers'
 import Solutions from './pages/Solutions'
 import Services from './pages/Services'
 import WebDD from './pages/WebDD'
-import DigitalMarketingSection from './components/DigitalMarketingSection'
 import SoftwareDevelopment from './pages/SoftwareDevelopment'
 import ITSupport from './pages/ITSupport'
 import ExpertTechSupport from './pages/ExpertTechSupport'
+import DigitalMarketing from './pages/DigitalMarketing'
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       <Route path='/solutions' element={<Solutions />} />
       <Route path='/services' element={<Services /> }/>
       <Route path='/services/web-design-development' element={<WebDD />} />
-      <Route path='/services/digital-marketing' element={<DigitalMarketingSection />} />
+      <Route path='/services/digital-marketing' element={<DigitalMarketing />} />
       <Route path='/services/software-development' element={<SoftwareDevelopment />} />
       <Route path='/services/it-support' element={<ITSupport />} />
       <Route path='/services/expert-tech-support' element={<ExpertTechSupport />} />

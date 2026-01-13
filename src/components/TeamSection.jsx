@@ -25,17 +25,21 @@ const teamMembers = [
   },
 ];
 
-// ===== Team Section Component =====
+// ===== Icon Button =====
+const IconButton = ({ icon }) => (
+  <span className="w-10 h-10 flex items-center justify-center bg-[#2d6cff] text-white rounded-full hover:bg-[#1f5eff] transition cursor-pointer">
+    {icon}
+  </span>
+);
+
+// ===== Team Section =====
 const TeamSection = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-[#05070d] to-[#0b1224] text-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ===== Heading ===== */}
-        <div
-          className="text-center max-w-2xl mx-auto mb-16 opacity-0 animate-fade-up"
-          style={{ animation: "fadeUp 0.8s forwards" }}
-        >
+        <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Awesome people behind us.
           </h2>
@@ -50,11 +54,8 @@ const TeamSection = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group bg-[#101b2f] rounded-2xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(45,108,255,0.25)] opacity-0"
-              style={{
-                animation: `fadeUp 0.8s forwards`,
-                animationDelay: `${index * 0.2}s`,
-              }}
+              className="group bg-[#101b2f] rounded-2xl overflow-hidden shadow-lg transform transition duration-500 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(45,108,255,0.25)] animate-fade-in"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -82,35 +83,10 @@ const TeamSection = () => {
             </div>
           ))}
         </div>
+
       </div>
-
-      {/* ===== Inline CSS Animations ===== */}
-      <style jsx>{`
-        @keyframes fadeUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-up {
-          opacity: 0;
-          animation: fadeUp 0.8s forwards;
-        }
-      `}</style>
     </section>
   );
 };
-
-// ===== Icon Button Component =====
-const IconButton = ({ icon }) => (
-  <span className="w-9 h-9 flex items-center justify-center bg-[#2d6cff] text-white rounded-md hover:bg-[#1f5eff] transition cursor-pointer">
-    {icon}
-  </span>
-);
 
 export default TeamSection;
