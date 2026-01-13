@@ -68,6 +68,13 @@ const HelpCenter = () => {
           font-weight: 700;
           margin-bottom: 12px;
         }
+          .help-hero {
+  padding: 90px 20px 80px; /* reduced */
+}
+.help-cards {
+  margin: 60px auto 60px; /* reduced */
+}
+
 
         .help-hero p {
           color: #b7c7e0;

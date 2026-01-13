@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import PageHero from '../components/PageHero'
 import Footer from '../components/Footer'
 import HelpCenter from '../components/HelpCenter'
 import FAQSection from '../components/FAQSection'
