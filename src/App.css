@@ -121,3 +121,12 @@ i:hover {
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
+
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+

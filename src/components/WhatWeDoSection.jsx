@@ -26,8 +26,8 @@ const WhatWeDoSection = () => {
 
                     {/* ================= CARD 1 ================= */}
                     <div className="bg-[#111c2e] rounded-xl p-6 pb-0 flex flex-col w-full min-h-[460px] md:w-[260px] lg:w-[320px]">
-                        <h4 className="text-[#2ea0ff] text-sm font-semibold mb-2">
-                            Mobile Application Development
+                        <h4 className="text-[#2ea0ff] text-lg font-semibold mb-2">
+                            MOBILE APPLICATION DEVELOPMENT
                         </h4>
 
                         <p className="text-[#9aa4bf] text-sm leading-relaxed mb-6 text-alig">
@@ -37,7 +37,7 @@ const WhatWeDoSection = () => {
                         {/* Image at bottom */}
                         <div className="mt-auto h-[240px] flex items-end justify-center overflow-hidden">
   <img
-    src="../public/photo/Digital Marketing & Branding.jpg"
+    src="/photo/mobile-app-development.jpg"
     alt="Mobile Application"
     className="h-full object-contain"
   />
@@ -47,8 +47,8 @@ const WhatWeDoSection = () => {
 
                     {/* ================= CARD 2 ================= */}
                     <div className="bg-[#111c2e] rounded-xl p-6 pb-0 flex flex-col w-full min-h-[460px] md:w-[260px] lg:w-[320px]">
-                        <h4 className="text-[#2ea0ff] text-sm font-semibold mb-2">
-                            Desktop Application Development & Website
+                        <h4 className="text-[#2ea0ff] text-lg font-semibold mb-2">
+                            DESKTOP APPLICATION DEVELOPMENT & WEBSITE
                         </h4>
 
                         <p className="text-[#9aa4bf] text-sm leading-relaxed mb-6">
@@ -73,8 +73,8 @@ const WhatWeDoSection = () => {
 
                         {/* Text */}
                         <div className="relative z-10 p-6">
-                            <h4 className="text-[#2ea0ff] text-sm font-semibold mb-2">
-                                Digital Marketing & Branding
+                            <h4 className="text-[#2ea0ff] text-lg font-semibold mb-2">
+                                DIGITAL MARKETING & BRANDING
                             </h4>
 
                             <p className="text-[#9aa4bf] text-sm leading-relaxed">
@@ -82,6 +82,14 @@ const WhatWeDoSection = () => {
                                 pulvinar curae ligula mattis platea.
                             </p>
                         </div>
+
+                         {/* <div className="mt-auto h-[240px] flex items-end justify-center overflow-hidden">
+                            <img
+                                src="/photo/digitalmb.jpg"
+                                alt="Desktop Application"
+                                className="h-full object-contain"
+                            />
+                        </div> */}
 
                         {/* Play button at bottom */}
                         <div className="relative z-10 mt-auto h-[240px] flex items-center justify-center">
