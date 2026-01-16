@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import PageHero from '../components/PageHero'
 import Footer from '../components/Footer'
 import ServicesSection from '../components/ServicesSection'
+import OurServicesSection from '../components/OurServicesSection'
 
 function Services() {
   return (
@@ -13,7 +14,7 @@ function Services() {
   title="Services"
   subtitle="Our mission is to make your business better through technology"
 /> */}
-    <ServicesSection />
+    <OurServicesSection />
 
       
       <Footer />

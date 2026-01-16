@@ -1,63 +1,60 @@
 import React from "react";
 
-const supportServices = [
-  {
-    title: "24/7 IT Support",
-    desc: "Round-the-clock technical support to ensure uninterrupted business operations.",
-    icon: "⏱️",
-  },
+const services = [
   {
     title: "Managed IT Services",
-    desc: "Proactive monitoring, maintenance, and management of your IT infrastructure.",
-    icon: "🖥️",
+    desc: "Complete IT management ensuring stability, performance, and security.",
+    img: "/photo/managed-it.jpg",
   },
   {
-    title: "Network Security",
-    desc: "Advanced security solutions to protect your business from cyber threats.",
-    icon: "🔐",
+    title: "Network Support & Security",
+    desc: "Secure networks with firewall protection and continuous monitoring.",
+    img: "/photo/network-security.jpg",
   },
   {
-    title: "Cloud & Server Management",
-    desc: "Secure cloud hosting, server monitoring, and infrastructure optimization.",
-    icon: "☁️",
+    title: "IT Infrastructure Setup",
+    desc: "Scalable IT infrastructure designed for business growth.",
+    img: "/photo/it-infrastructure.jpg",
   },
   {
-    title: "Data Backup & Recovery",
-    desc: "Reliable data protection and disaster recovery solutions for business continuity.",
-    icon: "💾",
+    title: "Remote & On-site Support",
+    desc: "Fast technical assistance through remote and on-site services.",
+    img: "/photo/remote-support.jpg",
   },
   {
-    title: "IT Consulting & Strategy",
-    desc: "Expert IT guidance aligned with your business growth and digital transformation goals.",
-    icon: "📊",
+    title: "System Monitoring & Maintenance",
+    desc: "Proactive monitoring to minimize downtime and risks.",
+    img: "/photo/system-monitoring.jpg",
   },
 ];
 
 const ITSupportSection = () => {
   return (
     <>
-      {/* ===== HERO ===== */}
+      {/* HERO */}
       <section className="it-hero">
-        <div className="it-hero-content slide-down">
+        <div className="it-hero-content">
           <span className="it-tag">IT SUPPORT SERVICES</span>
-          <h1>IT Support for Business Development</h1>
+          <h1>Reliable IT Support for Businesses</h1>
           <p>
-            Empowering businesses with reliable IT support, secure systems, and
-            scalable technology solutions that drive growth and efficiency.
+            We help businesses stay productive, secure, and scalable with
+            reliable IT support and expert technical assistance.
           </p>
         </div>
       </section>
 
-      {/* ===== SERVICES ===== */}
+      {/* SERVICES */}
       <section className="it-services">
         <div className="it-grid">
-          {supportServices.map((item, index) => (
+          {services.map((item, index) => (
             <div
-              key={index}
               className="it-card"
+              key={index}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="it-icon">{item.icon}</div>
+              <div className="it-img">
+                <img src={item.img} alt={item.title} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>
@@ -65,41 +62,37 @@ const ITSupportSection = () => {
         </div>
       </section>
 
-      {/* ===== BENEFITS ===== */}
-      <section className="it-benefits">
-        <h2 className="fade-in">Why Choose Our IT Support</h2>
-        <div className="benefit-grid">
+      {/* PROCESS */}
+      <section className="it-process">
+        <h2>Our IT Support Process</h2>
+        <div className="process-grid">
           {[
-            "Reduced Downtime",
-            "Improved Security",
-            "Scalable IT Solutions",
-            "Cost Optimization",
-            "Business Continuity",
-            "Expert Technical Team",
-          ].map((benefit, index) => (
-            <div
-              key={index}
-              className="benefit-card slide-up"
-              style={{ animationDelay: `${index * 0.12}s` }}
-            >
-              <span>✔</span>
-              <h4>{benefit}</h4>
+            "Assessment",
+            "Planning",
+            "Implementation",
+            "Monitoring",
+            "Issue Resolution",
+            "Continuous Support",
+          ].map((step, index) => (
+            <div className="process-card" key={index}>
+              <span>0{index + 1}</span>
+              <h4>{step}</h4>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
-      <section className="it-cta fade-in">
-        <h2>Reliable IT Support That Grows With Your Business</h2>
+      {/* CTA */}
+      <section className="it-cta">
+        <h2>Let Us Handle Your IT</h2>
         <p>
-          Let our IT experts handle your technology while you focus on expanding
-          your business.
+          Focus on growing your business while we manage, secure, and support
+          your IT systems.
         </p>
-        <button>Request IT Consultation</button>
+        <button>Get IT Support</button>
       </section>
 
-      {/* ===== CSS (SAME FILE) ===== */}
+      {/* STYLES */}
       <style>{`
         * {
           box-sizing: border-box;
@@ -113,18 +106,20 @@ const ITSupportSection = () => {
 
         /* HERO */
         .it-hero {
-          min-height: 65vh;
-          background: radial-gradient(circle at top, #0b1f33, #050b14);
+          min-height: 70vh;
           display: flex;
           align-items: center;
           justify-content: center;
+          background: linear-gradient(135deg, #071a2c, #050b14);
           text-align: center;
-          padding: 0 20px;
+          padding: 20px;
         }
 
+        
+
         .it-hero-content {
-          max-width: 820px;
-          opacity: 0;
+          max-width: 800px;
+          animation: slideDown 1s ease forwards;
         }
 
         .it-tag {
@@ -135,17 +130,16 @@ const ITSupportSection = () => {
           color: #2d6cff;
           font-size: 13px;
           letter-spacing: 2px;
-          margin-bottom: 18px;
+          margin-bottom: 16px;
         }
 
         .it-hero h1 {
           font-size: 46px;
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
 
         .it-hero p {
           color: #b9c9e4;
-          font-size: 16px;
           line-height: 1.7;
         }
 
@@ -155,7 +149,7 @@ const ITSupportSection = () => {
         }
 
         .it-grid {
-          max-width: 1100px;
+          max-width: 1200px;
           margin: auto;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -163,75 +157,83 @@ const ITSupportSection = () => {
         }
 
         .it-card {
-          background: rgba(18, 38, 58, 0.85);
-          backdrop-filter: blur(12px);
+          background: rgba(18, 38, 58, 0.9);
           border-radius: 20px;
-          padding: 44px 30px;
+          overflow: hidden;
+          padding-bottom: 30px;
           text-align: center;
-          opacity: 0;
           animation: fadeUp 0.9s ease forwards;
+          opacity: 0;
           transition: 0.4s;
         }
 
         .it-card:hover {
           transform: translateY(-12px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .it-icon {
-          font-size: 42px;
-          margin-bottom: 16px;
+        .it-img {
+          height: 180px;
+          overflow: hidden;
+        }
+
+        .it-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: 0.5s;
+        }
+
+        .it-card:hover img {
+          transform: scale(1.1);
         }
 
         .it-card h3 {
+          margin-top: 20px;
           font-size: 20px;
-          margin-bottom: 12px;
         }
 
         .it-card p {
           color: #c6d5ef;
+          padding: 0 20px;
           font-size: 14.5px;
           line-height: 1.7;
         }
 
-        /* BENEFITS */
-        .it-benefits {
+        /* PROCESS */
+        .it-process {
           padding: 80px 20px;
           text-align: center;
         }
 
-        .it-benefits h2 {
-          font-size: 36px;
-          margin-bottom: 50px;
+        .it-process h2 {
+          font-size: 34px;
+          margin-bottom: 40px;
         }
 
-        .benefit-grid {
+        .process-grid {
           max-width: 1000px;
           margin: auto;
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 20px;
         }
 
-        .benefit-card {
+        .process-card {
           background: linear-gradient(135deg, #12263a, #0b2c4a);
-          border-radius: 18px;
-          padding: 30px 20px;
-          opacity: 0;
-          animation: slideUp 0.9s ease forwards;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          justify-content: center;
+          border-radius: 16px;
+          padding: 26px 18px;
+          transition: 0.4s;
         }
 
-        .benefit-card span {
+        .process-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .process-card span {
           color: #2d6cff;
           font-size: 22px;
-        }
-
-        .benefit-card h4 {
-          font-size: 16px;
+          font-weight: bold;
         }
 
         /* CTA */
@@ -239,26 +241,23 @@ const ITSupportSection = () => {
           background: linear-gradient(135deg, #071a2c, #0b2c4a);
           padding: 90px 20px;
           text-align: center;
-          opacity: 0;
         }
 
         .it-cta h2 {
           font-size: 36px;
-          margin-bottom: 14px;
         }
 
         .it-cta p {
           color: #b6c6df;
           max-width: 600px;
-          margin: 0 auto 30px;
-          line-height: 1.7;
+          margin: 16px auto 30px;
         }
 
         .it-cta button {
-          background: linear-gradient(135deg, #356dff, #1e90ff);
-          border: none;
           padding: 14px 32px;
           border-radius: 12px;
+          background: linear-gradient(135deg, #356dff, #1e90ff);
+          border: none;
           color: #fff;
           font-weight: 600;
           cursor: pointer;
@@ -270,33 +269,10 @@ const ITSupportSection = () => {
         }
 
         /* ANIMATIONS */
-        .slide-down {
-          animation: slideDown 1s ease forwards;
-        }
-
-        .slide-up {
-          animation: slideUp 0.9s ease forwards;
-        }
-
-        .fade-in {
-          animation: fadeIn 1.2s ease forwards;
-        }
-
         @keyframes slideDown {
           from {
             opacity: 0;
             transform: translateY(-60px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
           }
           to {
             opacity: 1;
@@ -315,28 +291,18 @@ const ITSupportSection = () => {
           }
         }
 
-        @keyframes fadeIn {
-          to {
-            opacity: 1;
-          }
-        }
-
         /* RESPONSIVE */
         @media (max-width: 900px) {
           .it-grid {
             grid-template-columns: 1fr;
           }
 
-          .benefit-grid {
+          .process-grid {
             grid-template-columns: 1fr;
           }
 
           .it-hero h1 {
             font-size: 32px;
-          }
-
-          .it-benefits h2 {
-            font-size: 28px;
           }
         }
       `}</style>

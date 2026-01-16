@@ -1,106 +1,131 @@
 import React from "react";
+import {
+  FiTrendingUp,
+  FiBarChart2,
+  FiSearch,
+  FiMail,
+  FiUsers,
+  FiTarget,
+} from "react-icons/fi";
 
 const services = [
   {
-    title: "Search Engine Optimization (SEO)",
-    desc: "Improve your website ranking and visibility on search engines organically.",
-    icon: "🔍",
+    title: "Search Engine Optimization",
+    desc: "Improve organic rankings, visibility, and long-term traffic growth.",
+    icon: FiSearch,
+    animation: "slide-left",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48",
+  },
+  {
+    title: "Pay-Per-Click Advertising",
+    desc: "Run high-converting paid campaigns with optimized ad spend.",
+    icon: FiTarget,
+    animation: "slide-up",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
   },
   {
     title: "Social Media Marketing",
-    desc: "Build brand awareness and engagement across all major social platforms.",
-    icon: "📱",
+    desc: "Strengthen brand presence and engagement across social platforms.",
+    icon: FiUsers,
+    animation: "slide-right",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
   },
   {
-    title: "Pay Per Click (PPC)",
-    desc: "Target the right audience with high-converting paid ad campaigns.",
-    icon: "💰",
+    title: "Content & Email Marketing",
+    desc: "Deliver meaningful content and email campaigns that convert.",
+    icon: FiMail,
+    animation: "slide-left",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984",
   },
   {
-    title: "Content Marketing",
-    desc: "Create impactful content that educates, engages, and converts users.",
-    icon: "✍️",
+    title: "Analytics & Performance Reporting",
+    desc: "Measure success with data-driven insights and clear reporting.",
+    icon: FiBarChart2,
+    animation: "slide-up",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df",
   },
   {
-    title: "Email Marketing",
-    desc: "Personalized email campaigns to nurture leads and boost retention.",
-    icon: "📧",
-  },
-  {
-    title: "Analytics & Reporting",
-    desc: "Data-driven insights to measure performance and optimize strategies.",
-    icon: "📊",
+    title: "Conversion Rate Optimization",
+    desc: "Turn visitors into customers with optimized user journeys.",
+    icon: FiTrendingUp,
+    animation: "slide-right",
+    image: "https://images.unsplash.com/photo-1556761175-129418cb2dfe",
   },
 ];
 
 const DigitalMarketingSection = () => {
   return (
     <>
-      {/* ===== HERO ===== */}
+      {/* ================= HERO ================= */}
       <section className="dm-hero">
-        <div className="dm-hero-content slide-down">
-          <span className="dm-tag">DIGITAL MARKETING</span>
-          <h1>Grow Your Business Digitally</h1>
+        <div className="dm-hero-content fade-down">
+          <span className="dm-tag">DIGITAL MARKETING SERVICES</span>
+          <h1>Data-Driven Digital Growth Solutions</h1>
           <p>
-            We help brands reach the right audience, generate quality leads,
-            and maximize ROI through result-driven digital marketing strategies.
+            We help businesses increase visibility, attract qualified traffic,
+            and convert visitors into loyal customers using proven digital
+            marketing strategies.
           </p>
         </div>
       </section>
 
-      {/* ===== SERVICES ===== */}
+      {/* ================= SERVICES ================= */}
       <section className="dm-services">
         <div className="dm-grid">
           {services.map((item, index) => (
             <div
               key={index}
-              className="dm-card"
+              className={`dm-card ${item.animation}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="dm-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+              <img src={item.image} alt={item.title} />
+              <div className="dm-card-content">
+                <div className="dm-icon">
+                  <item.icon size={26} />
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===== STRATEGY ===== */}
+      {/* ================= STRATEGY ================= */}
       <section className="dm-strategy">
-        <h2 className="fade-in">Our Marketing Strategy</h2>
+        <h2 className="fade-in">Our Digital Marketing Approach</h2>
         <div className="strategy-grid">
-          {["Research", "Planning", "Execution", "Optimization", "Growth"].map(
-            (step, index) => (
-              <div
-                key={index}
-                className="strategy-card slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <span>0{index + 1}</span>
-                <h4>{step}</h4>
-              </div>
-            )
-          )}
+          {[
+            "Research & Analysis",
+            "Strategic Planning",
+            "Campaign Execution",
+            "Continuous Optimization",
+            "Growth & Scaling",
+          ].map((step, index) => (
+            <div
+              key={index}
+              className="strategy-card slide-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <span>0{index + 1}</span>
+              <h4>{step}</h4>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
+      {/* ================= CTA ================= */}
       <section className="dm-cta fade-in">
-        <h2>Ready to Scale Your Business?</h2>
+        <h2>Ready to Grow Your Digital Presence?</h2>
         <p>
-          Partner with us to create impactful digital campaigns that drive real
-          results and long-term growth.
+          Partner with Techno Sky Solutions to build scalable digital marketing
+          campaigns that deliver measurable and sustainable results.
         </p>
-        <button>Start Marketing Today</button>
+        <button>Request a Free Consultation</button>
       </section>
 
-      {/* ===== CSS ===== */}
+      {/* ================= STYLES ================= */}
       <style>{`
-        * {
-          box-sizing: border-box;
-          font-family: "Segoe UI", sans-serif;
-        }
-
         body {
           background: #050b14;
           color: #fff;
@@ -108,7 +133,7 @@ const DigitalMarketingSection = () => {
 
         /* HERO */
         .dm-hero {
-          min-height: 65vh;
+          min-height: 70vh;
           background: radial-gradient(circle at top, #0b1f33, #050b14);
           display: flex;
           align-items: center;
@@ -118,24 +143,24 @@ const DigitalMarketingSection = () => {
         }
 
         .dm-hero-content {
-          max-width: 820px;
+          max-width: 850px;
           opacity: 0;
         }
 
         .dm-tag {
           display: inline-block;
-          padding: 6px 18px;
-          border-radius: 20px;
-          background: rgba(30, 144, 255, 0.15);
-          color: #1e90ff;
-          font-size: 13px;
+          padding: 6px 22px;
+          border-radius: 30px;
+          background: rgba(46, 160, 255, 0.12);
+          color: #2ea0ff;
+          font-size: 12px;
           letter-spacing: 2px;
           margin-bottom: 18px;
         }
 
         .dm-hero h1 {
-          font-size: 48px;
-          margin-bottom: 16px;
+          font-size: 44px;
+          margin-bottom: 14px;
         }
 
         .dm-hero p {
@@ -150,59 +175,70 @@ const DigitalMarketingSection = () => {
         }
 
         .dm-grid {
-          max-width: 1100px;
+          max-width: 1200px;
           margin: auto;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
+          gap: 36px;
         }
 
         .dm-card {
-          background: rgba(18, 38, 58, 0.8);
-          backdrop-filter: blur(12px);
-          border-radius: 20px;
-          padding: 44px 30px;
-          text-align: center;
+          background: rgba(16, 30, 55, 0.85);
+          border-radius: 22px;
+          overflow: hidden;
           opacity: 0;
-          animation: fadeUp 0.9s ease forwards;
+          animation: fadeUp 1s ease forwards;
           transition: 0.4s;
         }
 
         .dm-card:hover {
           transform: translateY(-12px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 30px 70px rgba(46, 160, 255, 0.18);
+        }
+
+        .dm-card img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+        }
+
+        .dm-card-content {
+          padding: 28px;
+          text-align: center;
         }
 
         .dm-icon {
-          font-size: 42px;
-          margin-bottom: 16px;
+          width: 46px;
+          height: 46px;
+          margin: 0 auto 14px;
+          border-radius: 50%;
+          background: rgba(46, 160, 255, 0.15);
+          color: #2ea0ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .dm-card h3 {
           font-size: 20px;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
         }
 
         .dm-card p {
-          color: #c6d5ef;
           font-size: 14.5px;
+          color: #c6d5ef;
           line-height: 1.7;
         }
 
         /* STRATEGY */
         .dm-strategy {
-          padding: 80px 20px;
+          padding: 90px 20px;
           text-align: center;
         }
 
-        .dm-strategy h2 {
-          font-size: 36px;
-          margin-bottom: 50px;
-        }
-
         .strategy-grid {
-          max-width: 900px;
-          margin: auto;
+          max-width: 1000px;
+          margin: 60px auto 0;
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           gap: 20px;
@@ -213,45 +249,28 @@ const DigitalMarketingSection = () => {
           border-radius: 18px;
           padding: 30px 20px;
           opacity: 0;
-          animation: slideUp 0.9s ease forwards;
+          animation: slideUp 1s ease forwards;
         }
 
         .strategy-card span {
-          font-size: 26px;
+          font-size: 24px;
           font-weight: bold;
-          color: #1e90ff;
-        }
-
-        .strategy-card h4 {
-          margin-top: 12px;
-          font-size: 16px;
+          color: #2ea0ff;
         }
 
         /* CTA */
         .dm-cta {
           background: linear-gradient(135deg, #071a2c, #0b2c4a);
-          padding: 90px 20px;
+          padding: 100px 20px;
           text-align: center;
           opacity: 0;
         }
 
-        .dm-cta h2 {
-          font-size: 36px;
-          margin-bottom: 14px;
-        }
-
-        .dm-cta p {
-          color: #b6c6df;
-          max-width: 600px;
-          margin: 0 auto 30px;
-          line-height: 1.7;
-        }
-
         .dm-cta button {
-          background: linear-gradient(135deg, #356dff, #1e90ff);
+          background: linear-gradient(135deg, #2d6cff, #2ea0ff);
           border: none;
-          padding: 14px 32px;
-          border-radius: 12px;
+          padding: 14px 36px;
+          border-radius: 14px;
           color: #fff;
           font-weight: 600;
           cursor: pointer;
@@ -263,55 +282,53 @@ const DigitalMarketingSection = () => {
         }
 
         /* ANIMATIONS */
-        .slide-down {
-          animation: slideDown 1s ease forwards;
+        .fade-down {
+          animation: fadeDown 1.2s ease forwards;
+        }
+
+        .slide-left {
+          animation: slideLeft 1s ease forwards;
+        }
+
+        .slide-right {
+          animation: slideRight 1s ease forwards;
         }
 
         .slide-up {
-          animation: slideUp 0.9s ease forwards;
+          animation: slideUp 1s ease forwards;
         }
 
         .fade-in {
           animation: fadeIn 1.2s ease forwards;
         }
 
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-60px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        @keyframes fadeDown {
+          from { opacity: 0; transform: translateY(-60px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideLeft {
+          from { opacity: 0; transform: translateX(-60px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideRight {
+          from { opacity: 0; transform: translateX(60px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeIn {
-          to {
-            opacity: 1;
-          }
+          to { opacity: 1; }
         }
 
         /* RESPONSIVE */
@@ -325,11 +342,7 @@ const DigitalMarketingSection = () => {
           }
 
           .dm-hero h1 {
-            font-size: 34px;
-          }
-
-          .dm-strategy h2 {
-            font-size: 28px;
+            font-size: 32px;
           }
         }
       `}</style>

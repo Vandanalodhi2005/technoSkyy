@@ -1,76 +1,153 @@
 import React from "react";
 import {
-    FiPenTool,
-    FiTrendingUp,
-    FiCpu,
-    FiBarChart2,
+    FiGlobe,
+    FiUsers,
+    FiCheckCircle,
     FiShield,
-    FiLayout,
+    FiMessageSquare,
 } from "react-icons/fi";
-import ServicesCardsSection from "./ServicesCardsSection";
+
+const whyChooseData = [
+    {
+        icon: FiGlobe,
+        title: "Global Service Delivery",
+        desc: "Supporting clients across multiple regions with consistent quality.",
+    },
+    {
+        icon: FiUsers,
+        title: "Experienced Professionals",
+        desc: "Skilled developers, marketers, and IT specialists.",
+    },
+    {
+        icon: FiCheckCircle,
+        title: "Client-Focused Approach",
+        desc: "Customized solutions tailored to your business needs.",
+    },
+    {
+        icon: FiShield,
+        title: "Secure & Reliable",
+        desc: "Industry best practices with modern, secure technologies.",
+    },
+    {
+        icon: FiMessageSquare,
+        title: "Transparent Communication",
+        desc: "Clear processes and regular project updates.",
+    },
+];
+
+const approachSteps = [
+    "Understanding Your Needs",
+    "Strategic Planning",
+    "Design & Development",
+    "Testing & Deployment",
+    "Ongoing Support",
+];
 
 const OurServicesSection = () => {
     return (
-        <section className="bg-gradient-to-b w-full from-[#0b1224] to-[#0a0f1f] py-28">
+        <section className="bg-gradient-to-b from-[#0b1224] to-[#050b14] py-28 w-full">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* ================= TOP AREA ================= */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                {/* ================= HEADER ================= */}
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <span className="text-[#2ea0ff] text-xs tracking-[0.3em] uppercase font-semibold">
+                        Our Strengths
+                    </span>
+                    <h2 className="mt-4 text-white text-4xl font-bold">
+                        Why Choose Techno Sky Solutions
+                    </h2>
+                    <p className="mt-6 text-[#9aa4bf] leading-relaxed">
+                        We help businesses grow with secure, scalable, and future-ready
+                        digital solutions.
+                    </p>
+                </div>
 
-                    {/* Left Content */}
-                    <div>
-                        <span className="text-[#2ea0ff] text-xs font-semibold tracking-[0.25em] uppercase">
-                            Our Services
-                        </span>
+                {/* ================= WHY CHOOSE CARDS ================= */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {whyChooseData.map((item, index) => (
+                        <div
+                            key={index}
+                            className="group bg-[#0f1b34]/80 backdrop-blur-xl rounded-2xl p-8
+                                       hover:-translate-y-3 transition-all duration-500
+                                       shadow-lg hover:shadow-[0_25px_60px_rgba(46,160,255,0.25)]"
+                        >
+                            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2d6cff] to-[#2ea0ff]
+                                            flex items-center justify-center text-white mb-6">
+                                <item.icon size={24} />
+                            </div>
 
-                        <h2 className="mt-4 text-white text-3xl lg:text-4xl font-bold leading-tight">
-                            Let us do the work, so you can
-                            <br />
-                            focus on what matters.
-                        </h2>
+                            <h3 className="text-white font-semibold text-lg mb-3">
+                                {item.title}
+                            </h3>
 
-                        <p className="mt-6 text-[#9aa4bf] max-w-xl leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                        </p>
-
-                        {/* Feature list */}
-                        <div className="mt-8 space-y-5">
-                            {[
-                                { icon: FiPenTool, title: "Creative Solutions" },
-                                { icon: FiTrendingUp, title: "Digital Marketing" },
-                                { icon: FiCpu, title: "IOT & Programming" },
-                            ].map((item, i) => (
-                                <div key={i} className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-[#2ea0ff] flex items-center justify-center text-white">
-                                        <item.icon size={18} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-semibold">
-                                            {item.title}
-                                        </h4>
-                                        <p className="text-[#9aa4bf] text-sm">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                            <p className="text-[#9aa4bf] text-sm leading-relaxed">
+                                {item.desc}
+                            </p>
                         </div>
-                    </div>
+                    ))}
+                </div>
 
-                    {/* Right Image */}
-                    <div className="flex justify-center">
-                        <img
-                            src="https://new.creativemox.com/techbiz/wp-content/uploads/sites/12/2025/07/imac_img.png"
-                            alt="Service Preview"
-                            className="max-w-md w-full drop-shadow-2xl"
-                        />
+                {/* ================= OUR APPROACH ================= */}
+                <div className="mt-32">
+                    <h3 className="text-white text-3xl font-bold text-center mb-16">
+                        Our Approach
+                    </h3>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                        {approachSteps.map((step, index) => (
+                            <div
+                                key={index}
+                                className="bg-[#0f1b34] rounded-xl p-6 text-center
+                                           hover:bg-[#14264a] transition-all duration-300"
+                            >
+                                <span className="text-[#2ea0ff] text-3xl font-bold">
+                                    {index + 1}
+                                </span>
+                                <h4 className="mt-4 text-white text-sm font-semibold">
+                                    {step}
+                                </h4>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* ================= BOTTOM SERVICE CARDS ================= */}
-                <div>
-                    <ServicesCardsSection />
+                {/* ================= GLOBAL REACH ================= */}
+                <div className="mt-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <img
+                        src="/photo/Digital Marketing & Branding.jpg"
+                        alt="Global Reach"
+                        className="rounded-2xl shadow-2xl w-full"
+                    />
+
+                    <div>
+                        <h3 className="text-white text-3xl font-bold mb-6">
+                            Global Reach, Local Focus
+                        </h3>
+                        <p className="text-[#9aa4bf] leading-relaxed mb-4">
+                            Serving clients worldwide, we understand regional markets,
+                            time zones, and business cultures.
+                        </p>
+                        <p className="text-[#9aa4bf] leading-relaxed">
+                            Our flexible engagement models ensure reliable delivery
+                            and long-term partnerships.
+                        </p>
+                    </div>
+                </div>
+
+                {/* ================= CTA ================= */}
+                <div className="mt-32 text-center">
+                    <h3 className="text-white text-4xl font-bold mb-6">
+                        Let’s Work Together
+                    </h3>
+                    <p className="text-[#9aa4bf] max-w-2xl mx-auto mb-10">
+                        From startups to enterprises, Techno Sky Solutions is ready
+                        to support your digital journey.
+                    </p>
+                    <button className="px-10 py-4 rounded-xl font-semibold text-white
+                                       bg-gradient-to-r from-[#2d6cff] to-[#2ea0ff]
+                                       hover:scale-110 transition-transform">
+                        Get Started
+                    </button>
                 </div>
 
             </div>
