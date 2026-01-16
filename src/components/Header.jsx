@@ -19,17 +19,18 @@ const Header = ({ bgTransparent = true }) => {
 
   return (
     <>
-      <header className={`site-header fixed top-0 left-0 w-full z-[9999] ${headerBg}`}>
-        <div className="max-w-7xl mx-auto px-6 h-[80px] flex items-center justify-between">
+      <header
+        className={`fixed top-0 left-0 w-full z-[9999] transition-all ${headerBg}`}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-[90px] flex items-center justify-between">
+          
           {/* LOGO */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex">
-              <span className="w-3.5 h-3.5 bg-[#1f8cff] rounded-full"></span>
-              <span className="w-3.5 h-3.5 bg-[#2ea0ff] rounded-full -ml-1 mt-2"></span>
-            </div>
-            <span className="text-white text-2xl font-semibold">
-              TechnoSky
-            </span>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo/Techno-Sky-Logo.png"
+              alt="Techno Sky Logo"
+              className="logo-img"
+            />
           </Link>
 
           {/* DESKTOP MENU */}
@@ -70,7 +71,7 @@ const Header = ({ bgTransparent = true }) => {
 
           {/* CTA */}
           <Link to="/inquire" className="cta-btn hidden md:inline-block">
-            inquire
+            Inquire
           </Link>
 
           {/* MOBILE TOGGLE */}
@@ -85,40 +86,54 @@ const Header = ({ bgTransparent = true }) => {
         {/* MOBILE MENU */}
         {mobileOpen && (
           <div className="md:hidden bg-[#0b1224] px-6 py-6 space-y-4">
-            {["/", "/about", "/services", "/solutions", "/portfolio", "/blog", "/careers"].map(
-              (path, i) => (
-                <NavLink
-                  key={i}
-                  to={path}
-                  className="mobile-link"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {path === "/" ? "Home" : path.replace("/", "")}
-                </NavLink>
-              )
-            )}
+            {[
+              { path: "/", label: "Home" },
+              { path: "/about", label: "About" },
+              { path: "/services", label: "Services" },
+              { path: "/solutions", label: "Solutions" },
+              { path: "/portfolio", label: "Portfolio" },
+              { path: "/blog", label: "Blog" },
+              { path: "/careers", label: "Careers" },
+            ].map((item, i) => (
+              <NavLink
+                key={i}
+                to={item.path}
+                className="mobile-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
 
             <Link
               to="/inquire"
               onClick={() => setMobileOpen(false)}
               className="cta-btn block text-center mt-4"
             >
-              inquire
+              Inquire
             </Link>
           </div>
         )}
       </header>
 
-      {/* CSS */}
+      {/* STYLES */}
       <style>{`
+        .logo-img {
+          height: 56px;
+          width: auto;
+          object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+          .logo-img {
+            height: 46px;
+          }
+        }
+
         .nav-link {
           color: white;
-          font-size: 15px;
           transition: color 0.3s;
         }
-          position: fixed;
-          height: 80px;
-
 
         .nav-link:hover,
         .nav-link.active {
@@ -162,7 +177,6 @@ const Header = ({ bgTransparent = true }) => {
           padding: 14px 22px;
           display: block;
           color: #e5e7eb;
-          font-size: 14.5px;
         }
 
         .dropdown-item:hover,
