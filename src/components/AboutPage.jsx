@@ -11,7 +11,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           
           <img
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+            src="/photo/who-we-are.jpg"
             alt="Techno Sky Solutions"
             className="rounded-2xl shadow-xl animate-slide-left"
           />

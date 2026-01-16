@@ -50,8 +50,7 @@ const ContactSection = () => {
               <FaMapMarkerAlt className="icon" />
               <h4>Head Office</h4>
               <p>
-                Jalan Cempaka Wangi No 22 <br />
-                Jakarta - Indonesia
+                716-717, Tower4, ABC, Sector - 135, Noida , Uttar Pradesh
               </p>
             </div>
 
@@ -59,8 +58,7 @@ const ContactSection = () => {
               <FaEnvelope className="icon" />
               <h4>Email Us</h4>
               <p>
-                support@yourdomain.tld <br />
-                hello@yourdomain.tld
+                support@technoskysolution.com
               </p>
             </div>
 
@@ -68,17 +66,15 @@ const ContactSection = () => {
               <FaPhoneAlt className="icon" />
               <h4>Call us</h4>
               <p>
-                Phone : +6221.2002.2012 <br />
-                Fax : +6221.2002.2013
+                Phone : +1 (888) 928-6882 
               </p>
             </div>
 
             <div className="info-card from-right">
               <FaComments className="icon" />
-              <h4>Free Consultations</h4>
+              <h4>Whatsapp No.</h4>
               <p>
-                Phone : +6221.2002.2012 <br />
-                Fax : +6221.2002.2013
+                Phone : +1 (888) 928-6882
               </p>
             </div>
           </div>

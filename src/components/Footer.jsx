@@ -17,13 +17,13 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <div className="flex">
-              <span className="w-3 h-3 bg-[#1f8cff] rounded-full"></span>
-              <span className="w-3 h-3 bg-[#2ea0ff] rounded-full -ml-1 mt-2"></span>
-            </div>
-            <span className="text-white text-xl font-semibold tracking-wide">
-              techbiz
-            </span>
+           <Link to="/" className="flex items-center">
+                       <img
+                         src="/logo/Techno-Sky-Logo.png"
+                         alt="Techno Sky Logo"
+                         className="logo-img"
+                       />
+                     </Link>
           </div>
 
           <p className="text-sm text-[#cfd6ea] leading-relaxed max-w-sm">

@@ -4,6 +4,7 @@ import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 
 const Header = ({ bgTransparent = true }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,11 +20,9 @@ const Header = ({ bgTransparent = true }) => {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 w-full z-[9999] transition-all ${headerBg}`}
-      >
+      <header className={`fixed top-0 left-0 w-full z-[9999] ${headerBg}`}>
         <div className="max-w-7xl mx-auto px-6 h-[90px] flex items-center justify-between">
-          
+
           {/* LOGO */}
           <Link to="/" className="flex items-center">
             <img
@@ -34,15 +33,15 @@ const Header = ({ bgTransparent = true }) => {
           </Link>
 
           {/* DESKTOP MENU */}
-          <nav className="hidden md:flex items-center gap-12 text-[15px] font-medium">
+          <nav className="hidden md:flex items-center gap-12 font-medium">
             <NavLink to="/" className="nav-link">Home</NavLink>
             <NavLink to="/about" className="nav-link">About</NavLink>
 
-            {/* SERVICES */}
+            {/* SERVICES DESKTOP */}
             <div className="relative group">
-              <NavLink to="/services" className="nav-link flex items-center gap-1">
+              <span className="nav-link flex items-center gap-1 cursor-pointer">
                 Services <FiChevronDown size={16} />
-              </NavLink>
+              </span>
 
               <div className="dropdown">
                 <NavLink to="/services/web-design-development" className="dropdown-item">
@@ -86,30 +85,49 @@ const Header = ({ bgTransparent = true }) => {
         {/* MOBILE MENU */}
         {mobileOpen && (
           <div className="md:hidden bg-[#0b1224] px-6 py-6 space-y-4">
-            {[
-              { path: "/", label: "Home" },
-              { path: "/about", label: "About" },
-              { path: "/services", label: "Services" },
-              { path: "/solutions", label: "Solutions" },
-              { path: "/portfolio", label: "Portfolio" },
-              { path: "/blog", label: "Blog" },
-              { path: "/careers", label: "Careers" },
-            ].map((item, i) => (
-              <NavLink
-                key={i}
-                to={item.path}
-                className="mobile-link"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </NavLink>
-            ))}
 
-            <Link
-              to="/inquire"
-              onClick={() => setMobileOpen(false)}
-              className="cta-btn block text-center mt-4"
-            >
+            <NavLink to="/" className="mobile-link" onClick={() => setMobileOpen(false)}>Home</NavLink>
+            <NavLink to="/about" className="mobile-link" onClick={() => setMobileOpen(false)}>About</NavLink>
+
+            {/* SERVICES MOBILE */}
+            <div>
+              <button
+                onClick={() => setServicesOpen(!servicesOpen)}
+                className="mobile-link flex justify-between items-center w-full"
+              >
+                Services
+                <FiChevronDown
+                  className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {servicesOpen && (
+                <div className="ml-4 mt-2 space-y-2">
+                  <NavLink to="/services/web-design-development" className="sub-link" onClick={() => setMobileOpen(false)}>
+                    Website Design & Development
+                  </NavLink>
+                  <NavLink to="/services/digital-marketing" className="sub-link" onClick={() => setMobileOpen(false)}>
+                    Digital Marketing Services
+                  </NavLink>
+                  <NavLink to="/services/software-development" className="sub-link" onClick={() => setMobileOpen(false)}>
+                    Software Development Services
+                  </NavLink>
+                  <NavLink to="/services/it-support" className="sub-link" onClick={() => setMobileOpen(false)}>
+                    IT Support for Businesses
+                  </NavLink>
+                  <NavLink to="/services/expert-tech-support" className="sub-link" onClick={() => setMobileOpen(false)}>
+                    Expert Tech Support
+                  </NavLink>
+                </div>
+              )}
+            </div>
+
+            <NavLink to="/solutions" className="mobile-link" onClick={() => setMobileOpen(false)}>Solutions</NavLink>
+            <NavLink to="/portfolio" className="mobile-link" onClick={() => setMobileOpen(false)}>Portfolio</NavLink>
+            <NavLink to="/blog" className="mobile-link" onClick={() => setMobileOpen(false)}>Blog</NavLink>
+            <NavLink to="/careers" className="mobile-link" onClick={() => setMobileOpen(false)}>Careers</NavLink>
+
+            <Link to="/inquire" className="cta-btn block text-center mt-4" onClick={() => setMobileOpen(false)}>
               Inquire
             </Link>
           </div>
@@ -120,23 +138,14 @@ const Header = ({ bgTransparent = true }) => {
       <style>{`
         .logo-img {
           height: 100px;
-          width: auto;
-          object-fit: contain;
-        }
-
-        @media (max-width: 768px) {
-          .logo-img {
-            height: 46px;
-          }
         }
 
         .nav-link {
           color: white;
-          transition: color 0.3s;
+          cursor: pointer;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
+        .nav-link:hover {
           color: #2d6cff;
         }
 
@@ -144,14 +153,8 @@ const Header = ({ bgTransparent = true }) => {
           background: #2d6cff;
           padding: 12px 26px;
           border-radius: 8px;
-          font-size: 14px;
           font-weight: 600;
           color: white;
-          transition: background 0.3s;
-        }
-
-        .cta-btn:hover {
-          background: #1f5eff;
         }
 
         .dropdown {
@@ -163,8 +166,7 @@ const Header = ({ bgTransparent = true }) => {
           opacity: 0;
           visibility: hidden;
           transform: translateY(14px);
-          transition: 0.35s ease;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+          transition: 0.3s;
         }
 
         .group:hover .dropdown {
@@ -179,8 +181,7 @@ const Header = ({ bgTransparent = true }) => {
           color: #e5e7eb;
         }
 
-        .dropdown-item:hover,
-        .dropdown-item.active {
+        .dropdown-item:hover {
           background: rgba(45,108,255,0.18);
           color: white;
         }
@@ -189,10 +190,14 @@ const Header = ({ bgTransparent = true }) => {
           display: block;
           font-size: 16px;
           color: white;
+          padding: 6px 0;
         }
 
-        .mobile-link.active {
-          color: #2d6cff;
+        .sub-link {
+          display: block;
+          font-size: 14px;
+          color: #c7d2fe;
+          padding: 4px 0;
         }
       `}</style>
     </>
