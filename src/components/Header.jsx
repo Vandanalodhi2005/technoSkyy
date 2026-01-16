@@ -119,7 +119,7 @@ const Header = ({ bgTransparent = true }) => {
       {/* STYLES */}
       <style>{`
         .logo-img {
-          height: 56px;
+          height: 100px;
           width: auto;
           object-fit: contain;
         }
