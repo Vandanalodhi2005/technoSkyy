@@ -1,63 +1,71 @@
 import React from "react";
 
-const features = [
+const services = [
   {
-    title: "Custom Website Design",
-    desc: "Pixel-perfect UI designs focused on branding, user experience, and conversion.",
-    icon: "🎨",
+    title: "Responsive Web Design",
+    desc: "Websites that adapt perfectly across mobile, tablet, and desktop devices.",
+    img: "/photo/responsive-web.jpg",
+    animation: "slide-left",
   },
   {
-    title: "Responsive Development",
-    desc: "Fully responsive websites that work flawlessly across all devices.",
-    icon: "📱",
+    title: "eCommerce Development",
+    desc: "Secure and scalable eCommerce platforms with seamless checkout.",
+    img: "/photo/ecommerce.jpg",
+    animation: "slide-up",
   },
   {
-    title: "Performance Optimization",
-    desc: "Fast-loading, SEO-friendly websites optimized for high performance.",
-    icon: "⚡",
+    title: "CMS Websites",
+    desc: "Easy-to-manage CMS solutions using WordPress, Drupal & Joomla.",
+    img: "/photo/cms.jpg",
+    animation: "slide-right",
   },
   {
-    title: "CMS & Admin Panels",
-    desc: "Easy-to-manage CMS solutions with secure and scalable admin panels.",
-    icon: "🧩",
+    title: "Custom Web Applications",
+    desc: "Powerful web applications built to meet complex business needs.",
+    img: "/photo/web-app.jpg",
+    animation: "slide-left",
   },
   {
-    title: "E-Commerce Solutions",
-    desc: "Secure and scalable online stores with seamless checkout experiences.",
-    icon: "🛒",
+    title: "UI / UX Design",
+    desc: "User-focused UI/UX designs that improve engagement and conversions.",
+    img: "/photo/ui-ux.jpg",
+    animation: "slide-up",
   },
   {
-    title: "Ongoing Support",
-    desc: "Continuous maintenance, updates, and technical support post-launch.",
-    icon: "🛠️",
+    title: "Maintenance & Support",
+    desc: "Continuous website monitoring, updates, and performance support.",
+    img: "/photo/maintenance.jpg",
+    animation: "slide-right",
   },
 ];
 
-const WebDesignDevelopmentSection = () => {
+const WebsiteDesignDevelopmentSection = () => {
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section className="web-hero">
-        <div className="web-hero-content slide-down">
-          <span className="web-tag">WEB SERVICES</span>
-          <h1>Web Designing & Development</h1>
+      {/* HERO */}
+      <section className="wd-hero">
+        <div className="wd-hero-content fade-in">
+          <span className="wd-tag">WEB SOLUTIONS</span>
+          <h1>Website Design & Development</h1>
           <p>
-            We build visually stunning, high-performance websites that help
-            businesses grow and stand out in the digital world.
+            We create visually appealing, high-performance websites that help
+            brands grow, engage users, and drive results.
           </p>
         </div>
       </section>
 
-      {/* ===== FEATURES ===== */}
-      <section className="web-features">
-        <div className="web-grid">
-          {features.map((item, index) => (
+      {/* SERVICES */}
+      <section className="wd-services">
+        <div className="wd-grid">
+          {services.map((item, index) => (
             <div
               key={index}
-              className="web-card"
+              className={`wd-card ${item.animation}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="web-icon">{item.icon}</div>
+              <div className="wd-img">
+                <img src={item.img} alt={item.title} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>
@@ -65,36 +73,37 @@ const WebDesignDevelopmentSection = () => {
         </div>
       </section>
 
-      {/* ===== PROCESS ===== */}
-      <section className="web-process">
-        <h2 className="fade-in">Our Development Process</h2>
-        <div className="process-grid">
-          {["Planning", "Design", "Development", "Testing", "Launch"].map(
-            (step, index) => (
-              <div
-                key={index}
-                className="process-card slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <span>0{index + 1}</span>
-                <h4>{step}</h4>
-              </div>
-            )
-          )}
+      {/* TECHNOLOGIES */}
+      <section className="wd-tech fade-in">
+        <h2>Technologies We Use</h2>
+        <div className="tech-grid">
+          {[
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React",
+            "Node.js",
+            "WordPress",
+            "Shopify",
+          ].map((tech, index) => (
+            <span key={index} className="tech-badge">
+              {tech}
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
-      <section className="web-cta fade-in">
-        <h2>Let’s Build Your Website</h2>
+      {/* CTA */}
+      <section className="wd-cta fade-in">
+        <h2>Let’s Build Your Digital Presence</h2>
         <p>
-          Transform your ideas into a powerful online presence with our expert
-          web development team.
+          Partner with us to design and develop a website that reflects your
+          brand and drives success.
         </p>
-        <button>Get Started Today</button>
+        <button>Start Your Project</button>
       </section>
 
-      {/* ===== CSS (SAME FILE) ===== */}
+      {/* STYLES */}
       <style>{`
         * {
           box-sizing: border-box;
@@ -107,22 +116,22 @@ const WebDesignDevelopmentSection = () => {
         }
 
         /* HERO */
-        .web-hero {
-          min-height: 65vh;
-          background: radial-gradient(circle at top, #0b1f33, #050b14);
+        .wd-hero {
+          min-height: 70vh;
+          background: linear-gradient(135deg, #071a2c, #050b14);
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 0 20px;
+          padding: 20px;
         }
 
-        .web-hero-content {
-          max-width: 800px;
+        .wd-hero-content {
+          max-width: 820px;
           opacity: 0;
         }
 
-        .web-tag {
+        .wd-tag {
           display: inline-block;
           padding: 6px 18px;
           border-radius: 20px;
@@ -130,182 +139,153 @@ const WebDesignDevelopmentSection = () => {
           color: #2d9cff;
           font-size: 13px;
           letter-spacing: 2px;
-          margin-bottom: 20px;
-        }
-
-        .web-hero h1 {
-          font-size: 48px;
           margin-bottom: 18px;
         }
 
-        .web-hero p {
+        .wd-hero h1 {
+          font-size: 48px;
+          margin-bottom: 16px;
+        }
+
+        .wd-hero p {
           color: #b9c9e4;
-          font-size: 16px;
           line-height: 1.7;
         }
 
-        /* FEATURES */
-        .web-features {
+        /* SERVICES */
+        .wd-services {
           padding: 100px 20px;
         }
 
-        .web-grid {
-          max-width: 1100px;
+        .wd-grid {
+          max-width: 1200px;
           margin: auto;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 30px;
         }
 
-        .web-card {
-          background: rgba(18, 38, 58, 0.75);
-          backdrop-filter: blur(12px);
-          border-radius: 20px;
-          padding: 44px 32px;
-          text-align: center;
+        .wd-card {
+          background: rgba(18, 38, 58, 0.9);
+          border-radius: 22px;
+          overflow: hidden;
+          padding-bottom: 26px;
           opacity: 0;
-          animation: fadeUp 0.9s ease forwards;
+          animation-duration: 0.9s;
+          animation-fill-mode: forwards;
           transition: 0.4s;
         }
 
-        .web-card:hover {
+        .wd-card:hover {
           transform: translateY(-12px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .web-icon {
-          font-size: 44px;
-          margin-bottom: 18px;
+        .wd-img {
+          height: 180px;
+          overflow: hidden;
         }
 
-        .web-card h3 {
+        .wd-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: 0.5s;
+        }
+
+        .wd-card:hover img {
+          transform: scale(1.1);
+        }
+
+        .wd-card h3 {
+          margin-top: 20px;
           font-size: 20px;
-          margin-bottom: 12px;
+          text-align: center;
         }
 
-        .web-card p {
+        .wd-card p {
           color: #c6d5ef;
+          padding: 0 22px;
+          text-align: center;
           font-size: 14.5px;
           line-height: 1.7;
         }
 
-        /* PROCESS */
-        .web-process {
+        /* TECHNOLOGIES */
+        .wd-tech {
           padding: 80px 20px;
           text-align: center;
-        }
-
-        .web-process h2 {
-          font-size: 36px;
-          margin-bottom: 50px;
-        }
-
-        .process-grid {
-          max-width: 900px;
-          margin: auto;
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 20px;
-        }
-
-        .process-card {
-          background: linear-gradient(135deg, #12263a, #0b2c4a);
-          border-radius: 18px;
-          padding: 30px 20px;
           opacity: 0;
-          animation: slideUp 0.9s ease forwards;
         }
 
-        .process-card span {
-          font-size: 26px;
-          font-weight: bold;
+        .wd-tech h2 {
+          font-size: 34px;
+          margin-bottom: 30px;
+        }
+
+        .tech-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 14px;
+        }
+
+        .tech-badge {
+          padding: 10px 18px;
+          background: rgba(45, 156, 255, 0.15);
           color: #2d9cff;
-        }
-
-        .process-card h4 {
-          margin-top: 12px;
-          font-size: 16px;
+          border-radius: 20px;
+          font-size: 14px;
         }
 
         /* CTA */
-        .web-cta {
-          background: linear-gradient(135deg, #071a2c, #0b2c4a);
+        .wd-cta {
           padding: 90px 20px;
           text-align: center;
+          background: linear-gradient(135deg, #071a2c, #0b2c4a);
           opacity: 0;
         }
 
-        .web-cta h2 {
+        .wd-cta h2 {
           font-size: 36px;
-          margin-bottom: 14px;
         }
 
-        .web-cta p {
+        .wd-cta p {
+          max-width: 620px;
+          margin: 16px auto 30px;
           color: #b6c6df;
-          max-width: 600px;
-          margin: 0 auto 30px;
-          line-height: 1.7;
         }
 
-        .web-cta button {
-          background: linear-gradient(135deg, #356dff, #1e90ff);
-          border: none;
+        .wd-cta button {
           padding: 14px 32px;
           border-radius: 12px;
+          border: none;
+          background: linear-gradient(135deg, #356dff, #1e90ff);
           color: #fff;
           font-weight: 600;
           cursor: pointer;
           transition: 0.3s;
         }
 
-        .web-cta button:hover {
+        .wd-cta button:hover {
           transform: scale(1.06);
         }
 
         /* ANIMATIONS */
-        .slide-down {
-          animation: slideDown 1s ease forwards;
-        }
-
-        .slide-up {
-          animation: slideUp 0.9s ease forwards;
-        }
-
         .fade-in {
           animation: fadeIn 1.2s ease forwards;
         }
 
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-60px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .slide-left {
+          animation-name: slideLeft;
         }
 
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .slide-right {
+          animation-name: slideRight;
         }
 
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .slide-up {
+          animation-name: slideUp;
         }
 
         @keyframes fadeIn {
@@ -314,21 +294,51 @@ const WebDesignDevelopmentSection = () => {
           }
         }
 
+        @keyframes slideLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideRight {
+          from {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 900px) {
-          .web-grid {
+          .wd-grid {
             grid-template-columns: 1fr;
           }
 
-          .process-grid {
-            grid-template-columns: 1fr;
+          .wd-hero h1 {
+            font-size: 32px;
           }
 
-          .web-hero h1 {
-            font-size: 34px;
-          }
-
-          .web-process h2 {
+          .wd-tech h2,
+          .wd-cta h2 {
             font-size: 28px;
           }
         }
@@ -337,4 +347,4 @@ const WebDesignDevelopmentSection = () => {
   );
 };
 
-export default WebDesignDevelopmentSection;
+export default WebsiteDesignDevelopmentSection;

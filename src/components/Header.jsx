@@ -69,8 +69,8 @@ const Header = ({ bgTransparent = true }) => {
           </nav>
 
           {/* CTA */}
-          <Link to="/helpcenter" className="cta-btn hidden md:inline-block">
-            Help Center
+          <Link to="/inquire" className="cta-btn hidden md:inline-block">
+            inquire
           </Link>
 
           {/* MOBILE TOGGLE */}
@@ -99,11 +99,11 @@ const Header = ({ bgTransparent = true }) => {
             )}
 
             <Link
-              to="/helpcenter"
+              to="/inquire"
               onClick={() => setMobileOpen(false)}
               className="cta-btn block text-center mt-4"
             >
-              Help Center
+              inquire
             </Link>
           </div>
         )}

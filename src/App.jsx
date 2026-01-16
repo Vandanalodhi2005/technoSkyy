@@ -23,7 +23,7 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/blog" element={<Blog />} />
       <Route path='/portfolio' element={<Portfolio />} />
-      <Route path='/helpcenter' element={<HelpDeskCenter />} />
+      <Route path='/inquire' element={<Contact />} />
       <Route path='/careers' element={<Careers />} />
       <Route path='/solutions' element={<Solutions />} />
       <Route path='/services' element={<Services /> }/>

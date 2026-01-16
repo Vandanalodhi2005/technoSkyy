@@ -2,62 +2,70 @@ import React from "react";
 
 const expertServices = [
   {
-    title: "Certified Technical Experts",
-    desc: "Our certified professionals resolve complex technical issues with speed and precision.",
-    icon: "👨‍💻",
+    title: "Troubleshooting & Helpdesk",
+    desc: "Quick issue resolution through professional helpdesk and expert troubleshooting.",
+    img: "/photo/helpdesk.jpg",
+    animation: "from-left",
   },
   {
-    title: "24/7 Priority Support",
-    desc: "Round-the-clock expert assistance to keep your systems running without interruptions.",
-    icon: "⚡",
+    title: "Software Support",
+    desc: "Installation, configuration, updates, and issue resolution for all major software.",
+    img: "/photo/software-support.jpg",
+    animation: "from-bottom",
   },
   {
-    title: "Advanced Troubleshooting",
-    desc: "Deep diagnostic analysis to identify and fix root causes, not just symptoms.",
-    icon: "🛠️",
+    title: "Hardware Assistance",
+    desc: "Diagnosis, repair guidance, and performance optimization for hardware systems.",
+    img: "/photo/hardware.jpg",
+    animation: "from-right",
   },
   {
-    title: "Remote & On-Site Support",
-    desc: "Flexible support models including secure remote access and on-site assistance.",
-    icon: "🌐",
+    title: "24×7 Support Plan",
+    desc: "Always-on technical assistance ensuring zero downtime for critical systems.",
+    img: "/photo/24x7.jpg",
+    animation: "from-top",
   },
   {
-    title: "System Optimization",
-    desc: "Performance tuning and system optimization to improve productivity and efficiency.",
-    icon: "📈",
+    title: "Premium Support",
+    desc: "Priority response, faster resolution, and dedicated expert engineers.",
+    img: "/photo/premium.jpg",
+    animation: "from-left",
   },
   {
-    title: "Proactive Monitoring",
-    desc: "Continuous monitoring to prevent issues before they impact your business.",
-    icon: "🔍",
+    title: "Corporate Support",
+    desc: "Enterprise-level IT support customized for large-scale business operations.",
+    img: "/photo/corporate.jpg",
+    animation: "from-right",
   },
 ];
 
 const ExpertTechSupportSection = () => {
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section className="expert-hero">
-        <div className="expert-hero-content slide-down">
-          <span className="expert-tag">EXPERT TECH SUPPORT</span>
-          <h1>Expert Technical Support You Can Trust</h1>
+      {/* HERO */}
+      <section className="ets-hero">
+        <div className="ets-hero-content fade-in">
+          <span className="ets-tag">EXPERT TECH SUPPORT</span>
+          <h1>Reliable Technical Support for Modern Businesses</h1>
           <p>
-            Get fast, reliable, and expert-level technical support designed to
-            keep your business systems secure, optimized, and always available.
+            From troubleshooting to enterprise-grade support plans, our experts
+            ensure your systems remain secure, fast, and operational 24×7.
           </p>
         </div>
       </section>
 
-      {/* ===== SERVICES ===== */}
-      <section className="expert-services">
-        <div className="expert-grid">
+      {/* SERVICES */}
+      <section className="ets-services">
+        <div className="ets-grid">
           {expertServices.map((item, index) => (
             <div
               key={index}
-              className="expert-card"
+              className={`ets-card ${item.animation}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="expert-icon">{item.icon}</div>
+              <div className="ets-img">
+                <img src={item.img} alt={item.title} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>
@@ -65,40 +73,17 @@ const ExpertTechSupportSection = () => {
         </div>
       </section>
 
-      {/* ===== SUPPORT PROCESS ===== */}
-      <section className="expert-process">
-        <h2 className="fade-in">How Our Expert Support Works</h2>
-        <div className="process-grid">
-          {[
-            "Issue Identification",
-            "Expert Analysis",
-            "Quick Resolution",
-            "System Optimization",
-            "Ongoing Monitoring",
-          ].map((step, index) => (
-            <div
-              key={index}
-              className="process-card slide-up"
-              style={{ animationDelay: `${index * 0.12}s` }}
-            >
-              <span>{index + 1}</span>
-              <h4>{step}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== CTA ===== */}
-      <section className="expert-cta fade-in">
-        <h2>Need Immediate Expert Assistance?</h2>
+      {/* CTA */}
+      <section className="ets-cta fade-in">
+        <h2>Need Immediate Technical Assistance?</h2>
         <p>
-          Our tech specialists are ready to help you solve critical issues and
-          keep your business running smoothly.
+          Our certified experts are available round-the-clock to solve critical
+          issues and keep your business running smoothly.
         </p>
-        <button>Get Expert Support Now</button>
+        <button>Get Expert Support</button>
       </section>
 
-      {/* ===== CSS (SAME FILE) ===== */}
+      {/* STYLES */}
       <style>{`
         * {
           box-sizing: border-box;
@@ -111,22 +96,22 @@ const ExpertTechSupportSection = () => {
         }
 
         /* HERO */
-        .expert-hero {
-          min-height: 65vh;
-          background: radial-gradient(circle at top, #0b1f33, #050b14);
+        .ets-hero {
+          min-height: 70vh;
+          background: linear-gradient(135deg, #071a2c, #050b14);
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 0 20px;
+          padding: 20px;
         }
 
-        .expert-hero-content {
+        .ets-hero-content {
           max-width: 820px;
           opacity: 0;
         }
 
-        .expert-tag {
+        .ets-tag {
           display: inline-block;
           padding: 6px 18px;
           border-radius: 20px;
@@ -137,184 +122,127 @@ const ExpertTechSupportSection = () => {
           margin-bottom: 18px;
         }
 
-        .expert-hero h1 {
+        .ets-hero h1 {
           font-size: 46px;
           margin-bottom: 16px;
         }
 
-        .expert-hero p {
+        .ets-hero p {
           color: #b9c9e4;
-          font-size: 16px;
           line-height: 1.7;
         }
 
         /* SERVICES */
-        .expert-services {
+        .ets-services {
           padding: 100px 20px;
         }
 
-        .expert-grid {
-          max-width: 1100px;
+        .ets-grid {
+          max-width: 1200px;
           margin: auto;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
+          gap: 32px;
         }
 
-        .expert-card {
-          background: rgba(18, 38, 58, 0.85);
-          backdrop-filter: blur(12px);
-          border-radius: 20px;
-          padding: 44px 30px;
-          text-align: center;
+        .ets-card {
+          background: rgba(18, 38, 58, 0.9);
+          border-radius: 22px;
+          overflow: hidden;
+          padding-bottom: 26px;
           opacity: 0;
-          animation: fadeUp 0.9s ease forwards;
+          animation-duration: 0.9s;
+          animation-fill-mode: forwards;
           transition: 0.4s;
         }
 
-        .expert-card:hover {
+        .ets-card:hover {
           transform: translateY(-12px);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
         }
 
-        .expert-icon {
-          font-size: 42px;
-          margin-bottom: 16px;
+        .ets-img {
+          height: 180px;
+          overflow: hidden;
         }
 
-        .expert-card h3 {
+        .ets-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: 0.5s;
+        }
+
+        .ets-card:hover img {
+          transform: scale(1.1);
+        }
+
+        .ets-card h3 {
+          margin-top: 20px;
           font-size: 20px;
-          margin-bottom: 12px;
+          text-align: center;
         }
 
-        .expert-card p {
+        .ets-card p {
           color: #c6d5ef;
+          padding: 0 22px;
+          text-align: center;
           font-size: 14.5px;
           line-height: 1.7;
         }
 
-        /* PROCESS */
-        .expert-process {
-          padding: 80px 20px;
-          text-align: center;
-        }
-
-        .expert-process h2 {
-          font-size: 36px;
-          margin-bottom: 50px;
-        }
-
-        .process-grid {
-          max-width: 1000px;
-          margin: auto;
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 20px;
-        }
-
-        .process-card {
-          background: linear-gradient(135deg, #12263a, #0b2c4a);
-          border-radius: 18px;
-          padding: 28px 20px;
-          opacity: 0;
-          animation: slideUp 0.9s ease forwards;
-        }
-
-        .process-card span {
-          display: inline-flex;
-          width: 42px;
-          height: 42px;
-          align-items: center;
-          justify-content: center;
-          background: #2d6cff;
-          border-radius: 50%;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-
-        .process-card h4 {
-          font-size: 15px;
-        }
-
         /* CTA */
-        .expert-cta {
-          background: linear-gradient(135deg, #071a2c, #0b2c4a);
+        .ets-cta {
           padding: 90px 20px;
           text-align: center;
+          background: linear-gradient(135deg, #071a2c, #0b2c4a);
           opacity: 0;
         }
 
-        .expert-cta h2 {
+        .ets-cta h2 {
           font-size: 36px;
-          margin-bottom: 14px;
         }
 
-        .expert-cta p {
-          color: #b6c6df;
+        .ets-cta p {
           max-width: 600px;
-          margin: 0 auto 30px;
-          line-height: 1.7;
+          margin: 16px auto 30px;
+          color: #b6c6df;
         }
 
-        .expert-cta button {
-          background: linear-gradient(135deg, #356dff, #1e90ff);
-          border: none;
+        .ets-cta button {
           padding: 14px 34px;
           border-radius: 12px;
+          border: none;
+          background: linear-gradient(135deg, #356dff, #1e90ff);
           color: #fff;
           font-weight: 600;
           cursor: pointer;
           transition: 0.3s;
         }
 
-        .expert-cta button:hover {
+        .ets-cta button:hover {
           transform: scale(1.06);
         }
 
         /* ANIMATIONS */
-        .slide-down {
-          animation: slideDown 1s ease forwards;
-        }
-
-        .slide-up {
-          animation: slideUp 0.9s ease forwards;
-        }
-
         .fade-in {
           animation: fadeIn 1.2s ease forwards;
         }
 
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-60px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .from-left {
+          animation-name: fromLeft;
         }
 
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .from-right {
+          animation-name: fromRight;
         }
 
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        .from-bottom {
+          animation-name: fromBottom;
+        }
+
+        .from-top {
+          animation-name: fromTop;
         }
 
         @keyframes fadeIn {
@@ -323,21 +251,61 @@ const ExpertTechSupportSection = () => {
           }
         }
 
+        @keyframes fromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-70px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fromRight {
+          from {
+            opacity: 0;
+            transform: translateX(70px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fromBottom {
+          from {
+            opacity: 0;
+            transform: translateY(70px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fromTop {
+          from {
+            opacity: 0;
+            transform: translateY(-70px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 900px) {
-          .expert-grid {
+          .ets-grid {
             grid-template-columns: 1fr;
           }
 
-          .process-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .expert-hero h1 {
+          .ets-hero h1 {
             font-size: 32px;
           }
 
-          .expert-process h2 {
+          .ets-cta h2 {
             font-size: 28px;
           }
         }
