@@ -11,6 +11,8 @@ import PerformanceCTASection from "../components/PerformanceCTASection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import PortfolioSection from "../components/PortfolioSection";
 import BusinessServiceBanner from "../components/BusinessServiceBanner";
+import Portfolio360 from "../components/Portfolio360";
+import ScrollingScreenshotPortfolio from "../components/ScrollingScreenshotPortfolio";
 // import StartBusinessSection from "../components/StartBusinessSection";
 
 const Home = () => {
@@ -29,8 +31,11 @@ const Home = () => {
       <TestimonialSection />
       <PerformanceCTASection />
       <WhyChooseUsSection />
-      <PortfolioSection />
+      {/* <PortfolioSection /> */}
+      {/* <Portfolio360 /> */}
+      <ScrollingScreenshotPortfolio />
       <BusinessServiceBanner />
+      
 
       {/* FOOTER */}
       <Footer />

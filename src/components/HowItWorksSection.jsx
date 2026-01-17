@@ -1,29 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const steps = [
   {
     step: "1",
-    title: "Discover the product",
-    desc: "Leo himenaeos penatibus magnis platea nulla senectus adipiscing ad imperdiet quam facilisis",
+    title: "Understand Your Business",
+    desc: "We analyze your business goals, challenges, and technical requirements to build the right solution.",
     active: false,
+    animation: "from-left",
   },
   {
     step: "2",
-    title: "Free Consultations",
-    desc: "Leo himenaeos penatibus magnis platea nulla senectus adipiscing ad imperdiet quam facilisis",
+    title: "Free Consultation",
+    desc: "Our experts provide a detailed consultation and roadmap tailored to your business needs.",
     active: true,
+    animation: "from-bottom",
   },
   {
     step: "3",
-    title: "Wireframe & Production",
-    desc: "Leo himenaeos penatibus magnis platea nulla senectus adipiscing ad imperdiet quam facilisis",
+    title: "Design & Development",
+    desc: "We design intuitive interfaces and develop scalable, secure, and high-performance solutions.",
     active: false,
+    animation: "from-top",
   },
   {
     step: "4",
-    title: "Prototype Application",
-    desc: "Leo himenaeos penatibus magnis platea nulla senectus adipiscing ad imperdiet quam facilisis",
+    title: "Launch & Ongoing Support",
+    desc: "We deploy your project and provide continuous monitoring, updates, and expert support.",
     active: true,
+    animation: "from-right",
   },
 ];
 
@@ -43,6 +47,24 @@ const radiusByIndex = (index) => {
 };
 
 const HowItWorksSection = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    cardsRef.current.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-gradient-to-b w-full from-[#0b1224] to-[#0a0f1f] py-28">
       <div className="max-w-7xl mx-auto px-6">
@@ -50,11 +72,11 @@ const HowItWorksSection = () => {
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-24">
           <h2 className="text-white text-3xl lg:text-4xl font-bold">
-            How it works
+            How We Work
           </h2>
           <p className="mt-4 text-[#9aa4bf] text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo
+            A simple, transparent, and efficient process to deliver reliable
+            technology solutions for your business.
           </p>
         </div>
 
@@ -68,7 +90,10 @@ const HowItWorksSection = () => {
               return (
                 <div
                   key={index}
+                  ref={(el) => (cardsRef.current[index] = el)}
                   className={`
+                    work-card
+                    ${item.animation}
                     w-full md:w-[260px]
                     p-8
                     text-white
@@ -120,6 +145,35 @@ const HowItWorksSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Animations */}
+      <style>{`
+        .work-card {
+          opacity: 0;
+          transition: all 1.2s ease;
+        }
+
+        .work-card.animate-in {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        .from-left {
+          transform: translateX(-80px);
+        }
+
+        .from-right {
+          transform: translateX(80px);
+        }
+
+        .from-top {
+          transform: translateY(-80px);
+        }
+
+        .from-bottom {
+          transform: translateY(80px);
+        }
+      `}</style>
     </section>
   );
 };

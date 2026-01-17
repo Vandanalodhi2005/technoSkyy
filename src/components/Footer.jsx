@@ -119,7 +119,7 @@ const Footer = () => {
       <div className="border-t border-white/10 mt-16">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center text-sm text-[#cfd6ea]">
           <p>
-            © 2026 techbiz. All rights reserved. Powered by MoxCreative.
+            © 2026 technoSky. All rights reserved. Powered by MoxCreative.
           </p>
 
           <div className="flex gap-5 mt-3 md:mt-0">

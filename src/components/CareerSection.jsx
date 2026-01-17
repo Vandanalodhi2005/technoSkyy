@@ -5,311 +5,323 @@ const jobs = [
     title: "Frontend Developer",
     location: "Remote / India",
     type: "Full Time",
-    desc: "Work with React, modern UI libraries, and animation-driven interfaces.",
+    desc: "Build scalable and performance-driven user interfaces using React and modern frontend tools.",
   },
   {
     title: "Backend Developer",
     location: "Gurugram",
     type: "Full Time",
-    desc: "Build scalable APIs using Node.js, Express & databases.",
+    desc: "Develop secure APIs and backend services using Node.js, Express, and databases.",
   },
   {
     title: "UI/UX Designer",
     location: "Remote",
     type: "Contract",
-    desc: "Design modern SaaS interfaces with a focus on usability & motion.",
+    desc: "Design intuitive, user-centered interfaces aligned with business goals.",
+  },
+  {
+    title: "Web Development Intern",
+    location: "Remote",
+    type: "Internship",
+    desc: "Work on real-world projects under senior developer guidance.",
   },
 ];
 
 const CareerSection = () => {
   return (
     <>
-      {/* ===== HERO ===== */}
+      {/* HERO */}
       <section className="career-hero">
-        <div className="hero-content slide-down">
-          <span className="tag">CAREERS</span>
-          <h1>Build Your Career With Techbiz</h1>
+        <div className="overlay" />
+        <div className="hero-content animate-down">
+          <span className="hero-tag">CAREERS</span>
+          <h1>Careers at TechnoSky Solutions</h1>
           <p>
-            Join a team of innovators, creators, and problem solvers shaping the
-            future of digital solutions.
+            Join a professional IT environment where innovation, responsibility,
+            and growth come together.
           </p>
         </div>
       </section>
 
-      {/* ===== WHY JOIN US ===== */}
-      <section className="why-us">
-        <div className="why-grid">
-          <div className="why-card slide-left">
-            <h3>🚀 Growth & Learning</h3>
+      {/* WORK CULTURE */}
+      <section className="career-section">
+        <h2 className="section-title animate-fade">Our Work Culture</h2>
+
+        <div className="culture-grid">
+          <div className="glass-card animate-left">
+            <h3>Professional Work Environment</h3>
             <p>
-              Continuous learning, mentorship, and career advancement
-              opportunities.
+              Structured processes, transparent communication, and accountability
+              define how we work.
             </p>
           </div>
 
-          <div className="why-card slide-up">
-            <h3>💼 Flexible Work</h3>
+          <div className="glass-card animate-up">
+            <h3>Learning & Growth</h3>
             <p>
-              Remote-friendly culture with flexible schedules and healthy work
-              life balance.
+              Continuous skill development through real projects and mentorship.
             </p>
           </div>
 
-          <div className="why-card slide-right">
-            <h3>🌍 Inclusive Culture</h3>
+          <div className="glass-card animate-right">
+            <h3>Flexible Work Model</h3>
             <p>
-              A collaborative, diverse, and respectful environment for
-              everyone.
+              Remote-friendly culture with a strong focus on work-life balance.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===== OPEN POSITIONS ===== */}
-      <section className="jobs-section">
-        <div className="jobs-header fade-in">
+      {/* BENEFITS */}
+      <section className="career-section bg-dark">
+        <h2 className="section-title animate-fade">Benefits & Perks</h2>
+
+        <ul className="benefits-list">
+          <li>Remote & Hybrid Work Options</li>
+          <li>Flexible Working Hours</li>
+          <li>Paid Internship Programs</li>
+          <li>Skill Enhancement Support</li>
+          <li>Ethical & Transparent Workplace</li>
+        </ul>
+      </section>
+
+      {/* OPEN POSITIONS */}
+      <section className="career-section">
+        <div className="jobs-header animate-fade">
           <h2>Open Positions</h2>
-          <p>Find a role that matches your skills and passion.</p>
+          <p>Explore opportunities that match your expertise.</p>
         </div>
 
-        <div className="jobs-list">
+        <div className="jobs-wrapper">
           {jobs.map((job, index) => (
             <div
               key={index}
-              className="job-card"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="job-card animate-up"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div>
                 <h3>{job.title}</h3>
-                <p className="job-desc">{job.desc}</p>
-                <span className="job-meta">
-                  📍 {job.location} • ⏱ {job.type}
-                </span>
+                <p>{job.desc}</p>
+                <span>{job.location} • {job.type}</span>
               </div>
-              <button>Apply Now</button>
+              <button className="apply-btn">Apply Now</button>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===== CSS ===== */}
+      {/* CSS */}
       <style>{`
         * {
           box-sizing: border-box;
-          font-family: "Segoe UI", sans-serif;
+          font-family: "Inter", sans-serif;
         }
 
         body {
           background: #050b14;
-          color: #fff;
+          color: #ffffff;
         }
 
         /* HERO */
         .career-hero {
-          min-height: 60vh;
-          background: radial-gradient(circle at top, #0b1f33, #050b14);
+          position: relative;
+          min-height: 70vh;
+          background: url("/photo/career-bg.jpg") center/cover no-repeat;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 0 20px;
+        }
+
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(5,11,20,0.9),
+            rgba(5,11,20,0.95)
+          );
         }
 
         .hero-content {
-          max-width: 700px;
+          position: relative;
+          max-width: 760px;
+          padding: 0 20px;
           opacity: 0;
         }
 
-        .tag {
-          display: inline-block;
-          padding: 6px 16px;
-          border-radius: 20px;
-          background: rgba(30, 144, 255, 0.15);
-          color: #1e90ff;
-          font-size: 13px;
+        .hero-tag {
+          font-size: 12px;
           letter-spacing: 2px;
-          margin-bottom: 20px;
+          color: #93c5fd;
+          margin-bottom: 16px;
+          display: inline-block;
         }
 
         .career-hero h1 {
           font-size: 46px;
-          margin-bottom: 18px;
+          margin-bottom: 16px;
         }
 
         .career-hero p {
-          color: #b9c9e4;
-          font-size: 16px;
+          color: #c7d2fe;
           line-height: 1.7;
         }
 
-        /* WHY US */
-        .why-us {
+        /* SECTIONS */
+        .career-section {
           padding: 100px 20px;
+          max-width: 1200px;
+          margin: auto;
         }
 
-        .why-grid {
-          max-width: 1100px;
-          margin: auto;
+        .bg-dark {
+          background: linear-gradient(180deg, #071a2c, #050b14);
+          border-radius: 30px;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 34px;
+          margin-bottom: 60px;
+          opacity: 0;
+        }
+
+        /* GLASS CARDS */
+        .culture-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 30px;
         }
 
-        .why-card {
-          background: rgba(18, 38, 58, 0.7);
-          backdrop-filter: blur(12px);
-          border-radius: 20px;
-          padding: 40px;
-          transition: 0.4s;
+        .glass-card {
+          background: rgba(18, 38, 58, 0.65);
+          backdrop-filter: blur(14px);
+          border: 1px solid rgba(255,255,255,0.08);
+          padding: 36px;
+          border-radius: 18px;
           opacity: 0;
         }
 
-        .why-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .why-card h3 {
-          margin-bottom: 12px;
+        .glass-card h3 {
+          margin-bottom: 10px;
           font-size: 20px;
         }
 
-        .why-card p {
-          color: #c6d5ef;
-          line-height: 1.7;
-          font-size: 14.5px;
+        .glass-card p {
+          color: #cbd5f5;
+          line-height: 1.6;
+        }
+
+        /* BENEFITS */
+        .benefits-list {
+          max-width: 700px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 18px;
+          color: #cbd5f5;
         }
 
         /* JOBS */
-        .jobs-section {
-          padding: 100px 20px 120px;
-          background: linear-gradient(180deg, #050b14, #071a2c);
-        }
-
         .jobs-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 50px;
           opacity: 0;
         }
 
-        .jobs-header h2 {
-          font-size: 38px;
-          margin-bottom: 10px;
-        }
-
-        .jobs-header p {
-          color: #b6c6df;
-        }
-
-        .jobs-list {
+        .jobs-wrapper {
           max-width: 900px;
           margin: auto;
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          gap: 22px;
         }
 
         .job-card {
-          background: rgba(18, 38, 58, 0.8);
+          background: rgba(18, 38, 58, 0.75);
+          border: 1px solid rgba(255,255,255,0.08);
           border-radius: 18px;
           padding: 28px 32px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          animation: fadeUp 0.8s ease forwards;
           opacity: 0;
+          animation: fadeUp 0.9s ease forwards;
         }
 
         .job-card h3 {
-          font-size: 20px;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
+          font-size: 18px;
         }
 
-        .job-desc {
+        .job-card p {
           font-size: 14px;
-          color: #c6d5ef;
-          margin-bottom: 8px;
+          color: #cbd5f5;
+          margin-bottom: 6px;
         }
 
-        .job-meta {
+        .job-card span {
           font-size: 13px;
           color: #9fb4d9;
         }
 
-        .job-card button {
-          background: linear-gradient(135deg, #356dff, #1e90ff);
-          border: none;
-          padding: 12px 22px;
-          border-radius: 10px;
-          color: #fff;
+        .apply-btn {
+          background: transparent;
+          border: 1px solid #3b82f6;
+          color: #3b82f6;
+          padding: 10px 22px;
+          border-radius: 8px;
           font-weight: 600;
           cursor: pointer;
         }
 
-        .job-card button:hover {
-          transform: scale(1.05);
+        .apply-btn:hover {
+          background: #3b82f6;
+          color: #fff;
         }
 
         /* ANIMATIONS */
-        .slide-left {
-          animation: slideLeft 1s ease forwards;
-        }
-
-        .slide-up {
-          animation: slideUp 1s ease forwards;
-        }
-
-        .slide-right {
-          animation: slideRight 1s ease forwards;
-        }
-
-        .slide-down {
-          animation: slideDown 1s ease forwards;
-        }
-
-        .fade-in {
-          animation: fadeIn 1.2s ease forwards;
-        }
-
-        @keyframes slideLeft {
-          from { opacity: 0; transform: translateX(-80px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
+        .animate-up { animation: slideUp 1s ease forwards; }
+        .animate-left { animation: slideLeft 1s ease forwards; }
+        .animate-right { animation: slideRight 1s ease forwards; }
+        .animate-down { animation: slideDown 1s ease forwards; }
+        .animate-fade { animation: fadeIn 1.2s ease forwards; }
 
         @keyframes slideUp {
-          from { opacity: 0; transform: translateY(60px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideRight {
-          from { opacity: 0; transform: translateX(80px); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes slideDown {
-          from { opacity: 0; transform: translateY(-60px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeUp {
           from { opacity: 0; transform: translateY(40px); }
           to { opacity: 1; transform: translateY(0); }
         }
-
+        @keyframes slideLeft {
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideRight {
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         @keyframes fadeIn {
           to { opacity: 1; }
         }
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-          .why-grid {
+          .culture-grid {
             grid-template-columns: 1fr;
           }
 
           .job-card {
             flex-direction: column;
             align-items: flex-start;
-            gap: 20px;
+            gap: 16px;
           }
 
           .career-hero h1 {
